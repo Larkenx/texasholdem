@@ -39,17 +39,22 @@ class Round:
         for p in self.players:
             p.cards = [self.random_card(), self.random_card()]
 
+        # Do some actions here...
+
         for i in xrange(3):
             self.river.append(self.random_card())
 
     def play(self):
         """
         This is the main game loop. It will go through each player and prompt them for an action until
-        either the river has 5 cards or all but one player has folded. 
+        either the river has 5 cards or all but one player has folded.
         """
+
+        self.deal()
         while len(self.players) > 1 and len(self.river) < 5:
             for p in self.players:
                 # process player 'p' in some way...
+                pass
 
 
 
