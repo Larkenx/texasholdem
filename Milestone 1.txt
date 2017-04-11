@@ -1,8 +1,10 @@
-# Texas Hold'em
-
 1) Group Members: Steven Myers and Samuel Eleftheri
 
 2) Responsibilities and Due Dates. 3 weeks until project is due.
+
+    Duties for first week:
+    - Steven will create skeleton and Github repo for the project.
+    - Sam will identify poker games and what hands take priority over other hands.
 
     First Week (4/10 - 4/16):
     - Get card identification working.
