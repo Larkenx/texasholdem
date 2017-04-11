@@ -1,8 +1,8 @@
 # Texas Hold'em
 
-1) Group Members: Steven Myers and Samuel Eleftheri
+- Group Members: Steven Myers and Samuel Eleftheri
 
-2) Responsibilities and Due Dates. 3 weeks until project is due.
+- Responsibilities and Due Dates. 3 weeks until project is due.
 
     First Week (4/10 - 4/16):
     - Get card identification working.
@@ -21,7 +21,7 @@
     - Add in a quick look up table of probabilities for cards. Peak ahead to see what the chances of better cards for us is.
     - Make risks based on the percentage of our chips/pots. Really conservative/safe play when chips are low, a little less so when we have lots of chips.
 
-3) Strategy
+- Strategy
 
     - Come up with an API that can work with the template that we are given. It will be able to identify cards based on their number/index and use modulo arithmetic to determine suite/card value.
 
