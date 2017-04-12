@@ -8,7 +8,7 @@ def card_to_string(index):
     """Converts a single card index to a string representation with suite and face value"""
     value = (index % 13) + 1
     face = str(value) if value not in royal_cards else royal_cards[value]
-    suite = suites[(index / 13)]
+    suite = suites[(index // 13)]
     return "{0} of {1}".format(face, suite)
 
 def poker_hands(cards):
@@ -20,7 +20,7 @@ def poker_hands(cards):
     suite_count = [0,0,0,0]
 
     for c in cards: # Go through every card and record the number of times each one occurs
-        value, suite = (c % 13), (c / 13)
+        value, suite = (c % 13), (c // 13)
         face_count[value] += 1
         suite_count[suite] += 1
 
