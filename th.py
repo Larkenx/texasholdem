@@ -121,9 +121,9 @@ class Round:
 
 
 # Testing Poker Hands detection
-print poker_hands([0, 1, 2, 3, 4]) # Straight Flush
-print poker_hands([0, 1 + 13, 2, 3, 4]) # Straight
-print poker_hands([0, 2, 4, 6, 8]) # Flush
-print poker_hands([0, 0+13, 0+26, 0+39, 1]) # Four-of-a-kind
-print poker_hands([0, 0+13, 0+26, 2, 1]) # Three-of-a-kind
-print poker_hands([0, 0+13, 3, 4, 1]) # Two Pair
+print(poker_hands([0, 1, 2, 3, 4])) # Straight Flush
+print(poker_hands([0, 1 + 13, 2, 3, 4])) # Straight
+print(poker_hands([0, 2, 4, 6, 8])) # Flush
+print(poker_hands([0, 0+13, 0+26, 0+39, 1])) # Four-of-a-kind
+print(poker_hands([0, 0+13, 0+26, 2, 1])) # Three-of-a-kind
+print(poker_hands([0, 0+13, 3, 4, 1])) # Two Pair
