@@ -11,7 +11,8 @@ def card_to_string(index):
     value = (index % 13)
     face = str(value+2) if value not in royal_cards else royal_cards[value]
     suite = suites[(index // 13)]
-    return "{0} of {1}".format(face, suite)
+    # return "{0} of {1}".format(face, suite)
+    return "{0}{1}".format(face, suite)
 
 def poker_hands(cards):
     """Determines what poker hands exist in the given cards. So, if we give this the cards+river,
@@ -60,7 +61,7 @@ def poker_hands(cards):
             poker_hands.append(["Straight", sum(possible_straight, [])])
             straights.append(sum(possible_straight, []))
 
-    if straights and flushes:
+    if straights and flushes: # check for straight-flush
         sorted_s = [sorted(s) for s in straights]
         sorted_f = [sorted(f) for f in flushes]
         for s in sorted_s:
@@ -68,18 +69,26 @@ def poker_hands(cards):
                 poker_hands.append(["Straight-Flush", s])
                 straight_flushes.append(s)
 
-    if straight_flushes:
+    if straight_flushes: # check for royal-flush
         for s in straight_flushes:
             face_vals = [c % 13 for c in s]
             if face_vals == [8, 9, 10, 11, 12]:
                 poker_hands.append(["Royal-Flush", s])
 
+    # Every hand has a "high card" which may be used as a tie-breaker, particularly if the poker hands
+    # above are as a result of poker hands from the river cards.
+    poker_hands.append(["High Card", [max([c % 13 for c in cards])]])
+
     return poker_hands
 
 def print_poker_hand(hands):
+    """Prints all of the poker hands and the cards that they are comprised of. Special case for high card."""
     result = ""
     for h in hands:
-        result += "{0} with {1} and {2}.\n".format(h[0],
+        if len(h[1]) == 1:
+            result += "{0} with {1}.\n".format(h[0], card_to_string(h[1][0]))
+        else:
+            result += "{0} with {1} and {2}.\n".format(h[0],
                                             ", ".join([card_to_string(c) for c in h[1][:-1]]),
                                             card_to_string(h[1][-1]))
     print(result)
@@ -169,17 +178,15 @@ class Round:
 
 
 # Testing Index to Card Number
-'''
-print(card_to_string(0)) # 2 Diamonds
-print(card_to_string(9)) # Jack
-print(card_to_string(10)) # Queen
-print(card_to_string(11)) # King
-print(card_to_string(12)) # Ace
-print(card_to_string(13)) # 2 Clubs
-print(card_to_string(26)) # 2 Hearts
-print(card_to_string(39)) # 2 Spades
-print(card_to_string(51)) # Ace Spades
-'''
+# print(card_to_string(0)) # 2 Diamonds
+# print(card_to_string(9)) # Jack
+# print(card_to_string(10)) # Queen
+# print(card_to_string(11)) # King
+# print(card_to_string(12)) # Ace
+# print(card_to_string(13)) # 2 Clubs
+# print(card_to_string(26)) # 2 Hearts
+# print(card_to_string(39)) # 2 Spades
+# print(card_to_string(51)) # Ace Spades
 
 # Testing Poker Hands detection
 print_poker_hand(poker_hands([8, 9, 10, 11, 12])) # Royal-Flush and Straight-Flush
@@ -190,6 +197,7 @@ print_poker_hand(poker_hands([0, 0+13, 0+26, 2, 1])) # Three-of-a-kind
 print_poker_hand(poker_hands([0, 0+13, 3, 4, 1])) # Two Pair
 print_poker_hand(poker_hands([0, 2+13, 2, 4+13, 4])) # 2 Two Pairs
 print_poker_hand(poker_hands([4+26, 2+13, 2, 4+13, 4])) # Full House
+print_poker_hand(poker_hands([12, 5, 13])) # High Card
 
 # Sample Game
 # p1 = Player(100)
