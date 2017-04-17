@@ -2,8 +2,8 @@
 import random as rn
 
 original_deck = [x for x in range(0,52)]
-# suites = "Diamonds Clubs Hearts Spades".split()
-suites = "♦ ♣ ♥ ♠".split()
+suites = "Diamonds Clubs Hearts Spades".split()
+# suites = "♦ ♣ ♥ ♠".split()
 royal_cards = {9: "Jack", 10 : "Queen", 11: "King", 12 : "Ace"}
 
 def card_to_string(index):
@@ -92,31 +92,35 @@ def print_poker_hand(hands):
                                             ", ".join([card_to_string(c) for c in h[1][:-1]]),
                                             card_to_string(h[1][-1]))
     print(result)
+	
+def players_rank(players, river):
+    """Stores player rank according to his cards. (a pair = 1, straight-flush=10"""
+    for p in players:
+	    hand = poker_hands(p.cards + river)
+	    for h in hand:
+	        # print(h[0])
+		    if (h[0].startswith("2-of")):
+		        p.handrank = 1
+		    if (h[0].startswith("3-of")):
+		        p.handrank = 2
 
-
-def best_hand(cards): # takes poker_hands, find exact cards
-    if cards.contains("Straight-Flush"):
-        return
-    if cards.contains("4-of-a-kind"):
-        return
-    if cards.contains("Full House"):
-        return
-    if cards.contains("Flush"):
-        return
-    if cards.contains("Straight"):
-        return
-    if cards.contains("3-of-a-kind"):
-        return
-    if set(["2-of-a-kind", "2-of-a-kind"]):
-        return
-    if cards.contains("2-of-a-kind"):
-        return
+'''TO DO: Complete comparisons and all ranks'''
+def compare_players(players):
+    winner = players[0]
+    for p in players:
+	    if winner.handrank == p.handrank:
+	        '''Compare Highcard'''
+	    elif winner.handrank < p.handrank:
+	        winner = p
+	    
+    print(winner)
 
 class Player:
     def __init__(self, chips):
         """Initialize the Player class with some initial chips"""
         self.chips = chips
         self.cards = []
+        self.handrank = None;
 
     def __str__(self):
         """Return a string representation of the player. In our case this is just the cards the player
@@ -160,9 +164,9 @@ class Round:
 
         # Do some actions here...
 
-        for i in xrange(3):
-            self.river.append(self.random_card())
-
+        for i in range(5):
+	        self.river.append(self.random_card())
+		
     def play(self):
         """
         This is the main game loop. It will go through each player and prompt them for an action until
@@ -189,21 +193,27 @@ class Round:
 # print(card_to_string(51)) # Ace Spades
 
 # Testing Poker Hands detection
-print_poker_hand(poker_hands([8, 9, 10, 11, 12])) # Royal-Flush and Straight-Flush
-print_poker_hand(poker_hands([0, 1 + 13, 2, 3, 4])) # Straight
-print_poker_hand(poker_hands([0, 2, 4, 6, 8])) # Flush
-print_poker_hand(poker_hands([0, 0+13, 0+26, 0+39, 1])) # Four-of-a-kind
-print_poker_hand(poker_hands([0, 0+13, 0+26, 2, 1])) # Three-of-a-kind
-print_poker_hand(poker_hands([0, 0+13, 3, 4, 1])) # Two Pair
-print_poker_hand(poker_hands([0, 2+13, 2, 4+13, 4])) # 2 Two Pairs
-print_poker_hand(poker_hands([4+26, 2+13, 2, 4+13, 4])) # Full House
-print_poker_hand(poker_hands([12, 5, 13])) # High Card
+# print_poker_hand(poker_hands([8, 9, 10, 11, 12])) # Royal-Flush and Straight-Flush
+# print_poker_hand(poker_hands([0, 1 + 13, 2, 3, 4])) # Straight
+# print_poker_hand(poker_hands([0, 2, 4, 6, 8])) # Flush
+# print_poker_hand(poker_hands([0, 0+13, 0+26, 0+39, 1])) # Four-of-a-kind
+# print_poker_hand(poker_hands([0, 0+13, 0+26, 2, 1])) # Three-of-a-kind
+# print_poker_hand(poker_hands([0, 0+13, 3, 4, 1])) # Two Pair
+# print_poker_hand(poker_hands([0, 2+13, 2, 4+13, 4])) # 2 Two Pairs
+# print_poker_hand(poker_hands([4+26, 2+13, 2, 4+13, 4])) # Full House
+# print_poker_hand(poker_hands([12, 5, 13])) # High Card
 
 # Sample Game
-# p1 = Player(100)
-# p2 = Player(100)
-# r1 = Round([p1, p2])
+p1 = Player(100)
+p2 = Player(100)
+r1 = Round([p1, p2])
 #
-# r1.deal()
-# print r1
-# print poker_hands(r1.river + p1.cards)
+r1.deal()
+# print(r1)
+print(poker_hands(r1.river + p1.cards))
+print(poker_hands(r1.river + p2.cards))
+
+players_rank([p1, p2], r1.river)
+print(p1.handrank)
+print(p2.handrank)
+compare_players([p1, p2])
