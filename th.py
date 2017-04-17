@@ -179,8 +179,6 @@ class Round:
                 # process player 'p' in some way...
                 pass
 
-
-
 # Testing Index to Card Number
 # print(card_to_string(0)) # 2 Diamonds
 # print(card_to_string(9)) # Jack
