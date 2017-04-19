@@ -105,7 +105,6 @@ def print_poker_hand(hands):
         if len(h[1]) == 1:
             result += "{0} with {1}.\n".format(h[0], card_to_string(h[1][0]))
         else:
-            print h
             result += "{0} with {1} and {2}.\n".format(h[0],
                                             ", ".join([card_to_string(c) for c in h[1][:-1]]),
                                             card_to_string(h[1][-1]))
@@ -163,7 +162,6 @@ def compare_ranks(p1_hand, p2_hand):
             return -1 # p2 has the better hand
 
     return 0
-
 
 class Player:
     def __init__(self, chips):
@@ -258,17 +256,6 @@ print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 4+13,
 print(compare_ranks(poker_hands([3, 3+13, 4+13, 4]), poker_hands([2, 2+13, 4+13, 4]))) # p1 better two 2-pairs
 print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13, 5]))) # p2 better two 2-pairs
 """
-
-
-
-
-
-
-
-
-
-
-
 
 # # Sample Game
 # p1 = Player(100)
