@@ -342,16 +342,14 @@ print(compare_ranks(poker_hands([4,4+13,4+26]), poker_hands([5,5+13,5+26]))) # p
 print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 4+13, 4]))) # Tied two 2-pairs
 print(compare_ranks(poker_hands([3, 3+13, 4+13, 4]), poker_hands([2, 2+13, 4+13, 4]))) # p1 better two 2-pairs
 print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13, 5]))) # p2 better two 2-pairs
+print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p1 wins, second highest card
 """
-print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # this is incorrect, p1 should win
 
 """
-TODO: Figure out why this game returns a tie:
+TODO: Make sure this game works
 P1: ['Queen of Hearts', 'Jack of Spades']
 P2: ['10 of Diamonds', '5 of Hearts']
 River: ['2 of Diamonds', '4 of Diamonds', '8 of Hearts', '6 of Hearts', '9 of Spades']
-0
-Issue: Looks like we aren't looking at second-highest cards...
 """
 
 # # Sample Game
