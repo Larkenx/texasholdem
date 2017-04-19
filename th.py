@@ -179,7 +179,13 @@ class Player:
     def act(self, max_bet, blind, river, history):
         """ Player function to interact with the game. This function ought to return the action the
         player wants to take, up to and including the amount of money they want to bet. """
-        return ('CALL')
+        return ["CALL"]
+        '''
+        if self.id == 1:
+            return ["CALL"]
+        else:
+            return ["FOLD"]
+        '''
 
 class Table:
     def __init__(self, players):
@@ -222,9 +228,14 @@ class Table:
             p.chips -= self.ante
             if p.chips <= 0:
                 self.players.remove(p)
+            else:
+                p.chips += self.ante
 
         while len(self.river) <= 5:
             # DEBUG
+            print("------")
+            print("TURN " + str(self.turn + 1))
+            print("------")
             print(self)
             # Players can only bet as many chips as the number of chips held by the player with the fewest chips
             max_bet = min(p.chips for p in self.players)
@@ -236,23 +247,25 @@ class Table:
             # -------------------------
             for p in self.players:
                 if len(self.players) == 1:
-                    print("Player" + p.id + "wins!")
+                    print("Player " + str(p.id) + " wins!")
                     return p.id
 
                 p_move = p.act(max_bet, self.ante, self.river, self.round_history)
                 moves.append(p_move) # Store the move a player makes
-                if p_move[0] is "BET":
+                if p_move[0] == "BET":
                     OPEN = True
                     if p_move[1] > max_bet: # Invalid bet, removing player
                         print("Player {0} made an invalid bet! Kicking from table".format(p.id))
                         self.players.remove(p)
                     else: # Otherwise, record the bet if it's the minimum bet so far
                         player_bet = (p.id, p_move[1]) if not player_bet or p_move[1] < player_bet[2] else player_bet
-                if p_move[0] is "FOLD":
+
+                if p_move[0] == 'FOLD':
                     self.players.remove(p)
 
-            self.round_history.append(moves)
+            self.round_history = self.round_history + moves
             moves.clear()
+
             # if betting is open, we have to see if everyone calls/folds/raises. We continue until all call
             # RAISE/CALL Round
             # -------------------
@@ -277,19 +290,15 @@ class Table:
                             self.players.remove(p)
 
                     player_bet = player_raise
-                    self.round_history.append(moves)
+                    self.round_history = self.round_history + moves
 
                 self.round_history.append(moves)
                 for p in self.players:
                     p.chips -= player_bet
-                    if p.chips <= 0: # Player went all-in!
-                        pass
+                    if p.chips >= 0:
+                        self.pot += player_bet
 
-
-
-
-
-                # At this point, all players have called. We're ready to deduct bets
+            # At this point, all players have called. We're ready to deduct bets
 
             self.add_to_river()
 
@@ -299,7 +308,9 @@ class Table:
 
             self.turn += 1
 
-        return compare_ranks(poker_hands((self.players[0].cards + self.river)), poker_hands(self.players[1].cards + self.river))
+        print("ROUND_HISTORY: \n" + str(self.round_history))
+        winner = compare_ranks(poker_hands((self.players[0].cards + self.river)), poker_hands(self.players[1].cards + self.river))
+        return winner
 
 
 
@@ -335,9 +346,19 @@ print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 4+13,
 print(compare_ranks(poker_hands([3, 3+13, 4+13, 4]), poker_hands([2, 2+13, 4+13, 4]))) # p1 better two 2-pairs
 print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13, 5]))) # p2 better two 2-pairs
 """
+print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p2 better two 2-pairs
+
+"""
+TODO: Figure out why this game returns a tie:
+P1: ['Queen of Hearts', 'Jack of Spades']
+P2: ['10 of Diamonds', '5 of Hearts']
+River: ['2 of Diamonds', '4 of Diamonds', '8 of Hearts', '6 of Hearts', '9 of Spades']
+0
+Issue: Looks like we aren't looking at second-highest cards...
+"""
 
 # # Sample Game
-p1 = Player(1, 1000)
-p2 = Player(2, 1000)
-t1 = Table([p1, p2])
-print(t1.play())
+# p1 = Player(1, 1000)
+# p2 = Player(2, 1000)
+# t1 = Table([p1, p2])
+# print(t1.play())
