@@ -313,10 +313,6 @@ class Table:
         return winner
 
 
-
-            # Check every player's move
-
-
 # Testing Poker Hands detection
 """
 print_poker_hand(poker_hands([0, 0+13, 0+26, 0+39, 1])) # 4-of-a-kind
@@ -346,7 +342,7 @@ print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 4+13,
 print(compare_ranks(poker_hands([3, 3+13, 4+13, 4]), poker_hands([2, 2+13, 4+13, 4]))) # p1 better two 2-pairs
 print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13, 5]))) # p2 better two 2-pairs
 """
-print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p2 better two 2-pairs
+print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # this is incorrect, p1 should win
 
 """
 TODO: Figure out why this game returns a tie:
