@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # -*- coding: utf-8 -*-
 import random as rn
 
@@ -164,9 +165,10 @@ def compare_ranks(p1_hand, p2_hand):
     return 0
 
 class Player:
-    def __init__(self, chips):
+    def __init__(self, id, chips):
         """Initialize the Player class with some initial chips"""
         self.chips = chips
+        self.id = id
         self.cards = []
 
     def __str__(self):
@@ -174,16 +176,20 @@ class Player:
         has in their hand. """
         return str([card_to_string(c) for c in self.cards])
 
-    def act(self):
+    def act(self, max_bet, blind, river, history):
         """ Player function to interact with the game. This function ought to return the action the
         player wants to take, up to and including the amount of money they want to bet. """
-        pass
+        return ('CALL')
 
-class Round:
+class Table:
     def __init__(self, players):
         """Initialize a single round of the game. The cards start out as a fresh deck. River is empty."""
         self.cards = original_deck
         self.river = []
+        self.pot = 0
+        self.ante = 10
+        self.round_history = []
+        self.turn = 0
         self.players = players
 
     def __str__(self):
@@ -200,31 +206,104 @@ class Round:
     def print_river(self):
         return str([card_to_string(c) for c in self.river])
 
-    def deal(self):
-        """
-        TODO:
-            * Fix it so that players take turns doing actions with their initial cards, THEN place the river.
-        Deal two random cards to every player and set up the initial three cards of the river.
-        """
+    def deal_two(self):
         for p in self.players:
             p.cards = [self.random_card(), self.random_card()]
 
-        # Do some actions here...
-
-        for i in range(5):
-	        self.river.append(self.random_card())
+    def add_to_river(self):
+        self.river.append(self.random_card())
 
     def play(self):
-        """
-        This is the main game loop. It will go through each player and prompt them for an action until
-        either the river has 5 cards or all but one player has folded.
-        """
+        """ This is the main game loop. It will go through each player and prompt them for an action until
+        either the river has 5 cards or all but one player has folded. """
+        self.deal_two()
+        # Substract the ante from everyones' chips. If they don't have enough, remove from the game
+        for p in self.players:
+            p.chips -= self.ante
+            if p.chips <= 0:
+                self.players.remove(p)
 
-        self.deal()
-        while len(self.players) > 1 and len(self.river) < 5:
+        while len(self.river) <= 5:
+            # DEBUG
+            print(self)
+            # Players can only bet as many chips as the number of chips held by the player with the fewest chips
+            max_bet = min(p.chips for p in self.players)
+            moves = [] # History of moves
+            OPEN = False
+            player_bet = None
+            # Initial round for betting. If one player bets, the pot is said to be 'open' and continues
+            # onto another round (or series of rounds) of raising/folding/calling
+            # -------------------------
             for p in self.players:
-                # process player 'p' in some way...
-                pass
+                if len(self.players) == 1:
+                    print("Player" + p.id + "wins!")
+                    return p.id
+
+                p_move = p.act(max_bet, self.ante, self.river, self.round_history)
+                moves.append(p_move) # Store the move a player makes
+                if p_move[0] is "BET":
+                    OPEN = True
+                    if p_move[1] > max_bet: # Invalid bet, removing player
+                        print("Player {0} made an invalid bet! Kicking from table".format(p.id))
+                        self.players.remove(p)
+                    else: # Otherwise, record the bet if it's the minimum bet so far
+                        player_bet = (p.id, p_move[1]) if not player_bet or p_move[1] < player_bet[2] else player_bet
+                if p_move[0] is "FOLD":
+                    self.players.remove(p)
+
+            self.round_history.append(moves)
+            moves.clear()
+            # if betting is open, we have to see if everyone calls/folds/raises. We continue until all call
+            # RAISE/CALL Round
+            # -------------------
+            if OPEN:
+                player_raise = None
+                while not all(m[0] == "CALL" for m in moves):
+                    moves.clear()
+                    for p in self.players:
+                        if len(self.players) == 1: # All other players folded
+                            print("Player" + p.id + "wins!")
+                            return p.id
+
+                        p_move = p.act(max_bet, player_bet[1], self.river, self.round_history)
+                        moves.append(p_move) # Store the move a player makes
+                        if p_move[0] is "RAISE":
+                            if p_move[1] > max_bet or p_move[1] <= player_bet[1]: # Invalid bet, removing player
+                                print("Player {0} made an invalid bet! Kicking from table".format(p.id))
+                                self.players.remove(p)
+                            else: # Otherwise, record the bet if it's the minimum bet so far
+                                player_raise = (p.id, p_move[1]) if not player_raise or p_move[1] < player_raise[2] else player_raise
+                        if p_move[0] is "FOLD":
+                            self.players.remove(p)
+
+                    player_bet = player_raise
+                    self.round_history.append(moves)
+
+                self.round_history.append(moves)
+                for p in self.players:
+                    p.chips -= player_bet
+                    if p.chips <= 0: # Player went all-in!
+                        pass
+
+
+
+
+
+                # At this point, all players have called. We're ready to deduct bets
+
+            self.add_to_river()
+
+            if self.turn == 0:
+                self.add_to_river()
+                self.add_to_river()
+
+            self.turn += 1
+
+        return compare_ranks(poker_hands((self.players[0].cards + self.river)), poker_hands(self.players[1].cards + self.river))
+
+
+
+            # Check every player's move
 
 
 # Testing Poker Hands detection
@@ -258,11 +337,7 @@ print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13,
 """
 
 # # Sample Game
-# p1 = Player(100)
-# p2 = Player(100)
-# r1 = Round([p1, p2])
-
-# players_rank([p1, p2], r1.river)
-# print(p1.handrank)
-# print(p2.handrank)
-# compare_players([p1, p2])
+p1 = Player(1, 1000)
+p2 = Player(2, 1000)
+t1 = Table([p1, p2])
+print(t1.play())
