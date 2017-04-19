@@ -95,7 +95,8 @@ def poker_hands(cards):
 
     # Every hand has a "high card" which may be used as a tie-breaker, particularly if the poker hands
     # above are as a result of poker hands from the river cards.
-    poker_hands.append(["High-Card", [max([c % 13 for c in cards])]])
+    for c in cards:
+        poker_hands.append(["High-Card", [c]])
 
     return poker_hands
 
