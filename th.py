@@ -165,6 +165,25 @@ def compare_ranks(p1_hand, p2_hand):
 
     return 0
 
+"""
+What makes up final probability: 
+Important: 
+	(1) best hand. 
+	(2) where best cards come from (river/hand). 
+	(3) current stage (pre-flop, flop, turn, river)
+"""
+def win_percentage(p1):
+    """Determines probability of winning based ONLY ON player's best hand, returns hard win_percentage"""
+    hand_probabilities = { # Total Frequency: 2,598,960
+        'Straight-Flush' : 0.00139, # 36 frequency 
+        '4-of-a-kind' : 0.0240, 	# 624 
+        'Full-House' : 0.1441, 		# 3744 
+        'Flush' : 0.1965, 			# 5108 
+        'Straight': 0.3925, 		# 10200 
+        '3-of-a-kind': 2.1128, 		# 54912 
+        '2-of-a-kind': 42.2569, 	# 1,098,240
+	}
+
 class Player:
     def __init__(self, id, chips):
         """Initialize the Player class with some initial chips"""
@@ -238,11 +257,13 @@ class Table:
             print("TURN " + str(self.turn + 1))
             print("------")
             print(self)
+			
             # Players can only bet as many chips as the number of chips held by the player with the fewest chips
             max_bet = min(p.chips for p in self.players)
             moves = [] # History of moves
             OPEN = False
             player_bet = None
+			
             # Initial round for betting. If one player bets, the pot is said to be 'open' and continues
             # onto another round (or series of rounds) of raising/folding/calling
             # -------------------------
@@ -300,7 +321,6 @@ class Table:
                         self.pot += player_bet
 
             # At this point, all players have called. We're ready to deduct bets
-
             self.add_to_river()
 
             if self.turn == 0:
@@ -353,7 +373,7 @@ River: ['2 of Diamonds', '4 of Diamonds', '8 of Hearts', '6 of Hearts', '9 of Sp
 """
 
 # # Sample Game
-# p1 = Player(1, 1000)
-# p2 = Player(2, 1000)
-# t1 = Table([p1, p2])
-# print(t1.play())
+p1 = Player(1, 1000)
+p2 = Player(2, 1000)
+t1 = Table([p1, p2])
+print(t1.play())
