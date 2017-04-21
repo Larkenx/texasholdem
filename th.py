@@ -164,16 +164,26 @@ def compare_ranks(p1_hand, p2_hand):
             return -1 # p2 has the better hand
 
     return 0
+	
+"""
+Probability Outline:
 
+	1) Check if you have a rank hand
+	        If so: a) rank = certain hard percentage
+				   b) what is value or highest value of ranked hand? (pairs of 3 = 3 | straight = [0, 1, 2, 3, 4] = 4)
+				   c) depending on rank, check how many cards are made up by the river 
+				       *to see possiblility of another player having similar hand*
+					   
+	2) Check how close you are to having straight/flush if you do not have ranked hand
+		a) 
+		b) check each suit total (ex. 4 hearts - close - higher percentage)
+		c) check possibility of straight (ex. 1, 2, 4, 5 - missing one card - higher percentage)
+		
 """
-What makes up final probability: 
-Important: 
-	(1) best hand. 
-	(2) where best cards come from (river/hand). 
-	(3) current stage (pre-flop, flop, turn, river)
-"""
-def win_percentage(p1):
-    """Determines probability of winning based ONLY ON player's best hand, returns hard win_percentage"""
+
+def win_percentage(p_hand, river):
+    """Determines probability of winning based ONLY ON current player's best hand 
+    returns winning percentage"""
     hand_probabilities = { # Total Frequency: 2,598,960
         'Straight-Flush' : 0.00139, # 36 frequency 
         '4-of-a-kind' : 0.0240, 	# 624 
@@ -182,7 +192,42 @@ def win_percentage(p1):
         'Straight': 0.3925, 		# 10200 
         '3-of-a-kind': 2.1128, 		# 54912 
         '2-of-a-kind': 42.2569, 	# 1,098,240
-	}
+    }
+    
+    hand = p_hand + river
+    ordered = rank_poker_hands(poker_hands(hand))
+    num_of_cards = len(hand)
+
+    # print(ordered)
+    rank = ordered[0][0]
+	
+    """
+	TODO: Create function to find possibility
+	"""
+	
+    if (rank == 7): # 4-of-a-kind
+        return "4-of-a-kind Probability"
+
+    if (rank == 3) and (ordered[1][0] == 2): # full house
+        return "Full House Probability"			
+	
+    if (rank == 5): # flush
+        return "Flush Probability"			
+	
+    if (rank == 4): # straight
+        return "Straight Probability"		
+
+    if (rank == 3): # 3-of-a-kind
+        return "3-of-a-kind Probability"      
+
+    if (rank == 2): # 2-pair
+        if (ordered[1][0] == 2): # two 2-pairs
+            return "2 2-Pairs Probability"      
+        return "2-Pair Probability" 
+
+    if (rank == 1): # High Card
+        return "High Card Probability"	
+
 
 class Player:
     def __init__(self, id, chips):
@@ -190,12 +235,13 @@ class Player:
         self.chips = chips
         self.id = id
         self.cards = []
+        self.rank = -1
 
     def __str__(self):
         """Return a string representation of the player. In our case this is just the cards the player
         has in their hand. """
         return str([card_to_string(c) for c in self.cards])
-
+		
     def act(self, max_bet, blind, river, history):
         """ Player function to interact with the game. This function ought to return the action the
         player wants to take, up to and including the amount of money they want to bet. """
@@ -257,6 +303,10 @@ class Table:
             print("TURN " + str(self.turn + 1))
             print("------")
             print(self)
+            print()
+            for p in self.players:
+                print("P" + str(p.id) + " Win Probability: " + win_percentage(p.cards, self.river))
+            print()
 			
             # Players can only bet as many chips as the number of chips held by the player with the fewest chips
             max_bet = min(p.chips for p in self.players)
@@ -345,6 +395,7 @@ print_poker_hand(poker_hands([12, 5, 13])) # High Card with Ace
 print_poker_hand(poker_hands([12, 0, 1, 2, 3+13])) # Straight with an Ace
 print_poker_hand(poker_hands([0,1,2,3,5])) # Flush of Diamonds
 """
+
 # Testing Poker Hand comparisons
 """
 print(compare_ranks(poker_hands([0,1,2,3,4]), poker_hands([0,1,2,3,4]))) # Tied Straights
@@ -365,6 +416,17 @@ print(compare_ranks(poker_hands([2, 2+13, 4+13, 4]), poker_hands([2, 2+13, 5+13,
 print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p1 wins, second highest card
 """
 
+# Testing Winning Percentage Based on Hand and River Cards
+"""
+win_percentage([1, 31], [2, 5, 7]) # Three 2-pairs
+win_percentage([1, 31], [14, 8, 27]) # 3-of-a-kind
+win_percentage([1, 2], [3, 17, 18]) # Straight
+win_percentage([1, 3], [5, 7, 9]) # Flush
+win_percentage([1, 4], [14, 17, 30]) # Full House
+win_percentage([1, 14], [27, 40, 9]) # 4-of-a-kind
+# win_percentage([1, 2], [3, 4, 5]) # Straight-Flush
+"""
+
 """
 TODO: Make sure this game works
 P1: ['Queen of Hearts', 'Jack of Spades']
@@ -372,7 +434,7 @@ P2: ['10 of Diamonds', '5 of Hearts']
 River: ['2 of Diamonds', '4 of Diamonds', '8 of Hearts', '6 of Hearts', '9 of Spades']
 """
 
-# # Sample Game
+# Sample Game
 p1 = Player(1, 1000)
 p2 = Player(2, 1000)
 t1 = Table([p1, p2])
