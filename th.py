@@ -35,6 +35,8 @@ def poker_hands(cards):
     poker_hands = []
     face_count = [[] for x in range(0, 13)]  # Store cards from the input into bins. They are divided by face value
     suite_count = [[] for x in range(0, 4)] # Same for cards of the same suite
+    twos = []
+    threes = []
     straights = []  # it's possible to have more than one...
     flushes = []  # same as above
     straight_flushes = [] # super unlikely...but same as above
@@ -51,6 +53,11 @@ def poker_hands(cards):
         num_of_cards = len(face_count[index])
         if num_of_cards > 1:
             hand = ["{0}-of-a-kind".format(num_of_cards), face_count[index]]
+            if num_of_cards == 2:
+                twos.append(face_count[index])
+            if num_of_cards == 3:
+                threes.append(face_count[index])
+
             poker_hands.append(hand)
 
     for i in range(0, 4): # flush
@@ -85,13 +92,11 @@ def poker_hands(cards):
                 poker_hands.append(["Straight-Flush", s])
                 straight_flushes.append(s)
 
-    """ # We don't actually need to check for royal-flushes because they are inherently the best straight-flush
-    if straight_flushes: # check for royal-flush
-        for s in straight_flushes:
-            face_vals = [c % 13 for c in s]
-            if face_vals == [8, 9, 10, 11, 12]:
-                poker_hands.append(["Royal-Flush", s])
-    """
+    # Full House
+    if twos and threes:
+        for pair in twos:
+            for three in threes:
+                poker_hands.append(["Full-House", pair + three])
 
     # Every hand has a "high card" which may be used as a tie-breaker, particularly if the poker hands
     # above are as a result of poker hands from the river cards.
@@ -139,9 +144,51 @@ def rank_poker_hands(hands):
 
     return sorted(ranked_hands, key=lambda x: (-x[0], -x[1]))
 
+
+
+def compare_hands(player_hands):
+    """Accepts a list of tuples, where each tuple is a player ID (number) players' submitted best hands.
+    Returns the player ID of the best hand. If there are ties, then it will return a list of player ID's that tied"""
+
+    def compare_two(h1,h2):
+        if h1[0] == h2[0]:
+            # Check to see which hand is better
+            if h1[1] > h2[1]: # First hand is better
+                return 1
+
+            if h1[1] < h2[1]: # Second hand is better
+                return -1
+
+            return 0
+
+        # not the same type of hand, so one is strictly better than the other
+        elif h1[0] > h2[0]: # p1 has the better hand
+            return 1
+        else:
+            return -1 # p2 has the better hand
+
+    best_so_far = [-1,-1]
+    tied_players = []
+    for pid, h in player_hands:
+        comparison_result = compare_two(h, best_so_far)
+        if comparison_result == 0: # This hand ties the previous best hand
+            tied_players.append(pid)
+        elif comparison_result == 1: # This hand is better than the prev best
+            tied_players.clear() # Get rid of all the possibly tied players
+            tied_players.append(pid)
+            best_so_far = h # Set it to be the new best hand
+        else: # This hand is worse than the best hand, so this player 'loses'
+            pass
+
+    return tied_players
+
+# DEPRECATED
 def compare_ranks(p1_hand, p2_hand):
     """Determines which player holds a better poker hand. Accepts input args from the poker_hands(...) fn.
-    Outputs 1 for p1 better hand, -1 for p2 better hand, or 0 for tie."""
+    Outputs 1 for p1 better hand, -1 for p2 better hand, or 0 for tie.
+
+    NOTE: This function is sort of deprecated since we only care about best hands
+    """
     r1 = rank_poker_hands(p1_hand)
     r2 = rank_poker_hands(p2_hand)
     # iterate through every ranked tuple in both players...
@@ -165,9 +212,7 @@ def compare_ranks(p1_hand, p2_hand):
 
     return 0
 
-"""
-Probability Outline:
-
+""" Probability Outline:
 	1) Check if you have a rank hand
 	        If so: a) rank = certain hard percentage
 				   b) what is value or highest value of ranked hand? (pairs of 3 = 3 | straight = [0, 1, 2, 3, 4] = 4)
@@ -177,9 +222,7 @@ Probability Outline:
 	2) Check how close you are to having straight/flush if you do not have ranked hand
 		a)
 		b) check each suit total (ex. 4 hearts - close - higher percentage)
-		c) check possibility of straight (ex. 1, 2, 4, 5 - missing one card - higher percentage)
-
-"""
+		c) check possibility of straight (ex. 1, 2, 4, 5 - missing one card - higher percentage) """
 
 def win_percentage(p_hand, river):
     """Determines probability of winning based ONLY ON current player's best hand
@@ -208,7 +251,7 @@ def win_percentage(p_hand, river):
     if (rank == 7): # 4-of-a-kind
         return "4-of-a-kind Probability"
 
-    if (rank == 3) and (ordered[1][0] == 2): # full house
+    if (rank == 6): # full house
         return "Full House Probability"
 
     if (rank == 5): # flush
@@ -228,10 +271,9 @@ def win_percentage(p_hand, river):
     if (rank == 1): # High Card
         return "High Card Probability"
 
-
 class Player:
     def __init__(self, id, chips):
-        """Initialize the Player class with some initial chips"""
+        """Initialize the Player class with some initial chips and a unique ID. """
         self.chips = chips
         self.id = id
         self.cards = []
@@ -241,6 +283,11 @@ class Player:
         """Return a string representation of the player. In our case this is just the cards the player
         has in their hand. """
         return str([card_to_string(c) for c in self.cards])
+
+    def best_hand(self, river):
+        """Given any list of cards, it deteremines the best hand to pull from the cards. Output is
+        in the format of a tuple, first ele string name/id of the poker hand and second ele is the cards"""
+        return self.id, rank_poker_hands(poker_hands(self.cards + river))[0]
 
     def act(self, max_bet, blind, river, history):
         """ Player function to interact with the game. This function ought to return the action the
@@ -289,13 +336,16 @@ class Table:
         """ This is the main game loop. It will go through each player and prompt them for an action until
         either the river has 5 cards or all but one player has folded. """
         self.deal_two()
-        # Substract the ante from everyones' chips. If they don't have enough, remove from the game
+        # Substract the ante from everyones' chips and add it to the pot. If they don't have enough, remove from the game
         for p in self.players:
-            p.chips -= self.ante
             if p.chips <= 0:
                 self.players.remove(p)
+            elif p.chips > self.ante:
+                self.pot += p.chips
+                p.chips = 0
             else:
-                p.chips += self.ante
+                self.pot += self.ante
+                p.chips -= self.ante
 
         while len(self.river) <= 5:
             # DEBUG
@@ -313,44 +363,54 @@ class Table:
             moves = [] # History of moves
             OPEN = False
             player_bet = None
+            # If not OPEN, then this is the an initial betting round and is said to be an CLOSED pot.
+            # Stage 1 possible actions are CHECK, FOLD, and BET+AMT
+
+            # If OPEN, then this is an OPEN pot and someone has already made a BET. Available actions are...
+            # RAISE+AMT, FOLD, CALL.
 
             # Initial round for betting. If one player bets, the pot is said to be 'open' and continues
-            # onto another round (or series of rounds) of raising/folding/calling
+            # onto another round of raising/folding/calling. Available actions here are FOLD, CHECK, RAISE
             # -------------------------
             for p in self.players:
                 if len(self.players) == 1:
                     print("Player " + str(p.id) + " wins!")
                     return p.id
 
-                p_move = p.act(max_bet, self.ante, self.river, self.round_history)
-                moves.append(p_move) # Store the move a player makes
+                p_move = p.act(OPEN, max_bet, self.river, self.round_history)
+                # Player chose to bet...
                 if p_move[0] == "BET":
-                    OPEN = True
                     if p_move[1] > max_bet: # Invalid bet, removing player
                         print("Player {0} made an invalid bet! Kicking from table".format(p.id))
                         self.players.remove(p)
+                        p_move = ["FOLD"]
                     else: # Otherwise, record the bet if it's the minimum bet so far
+                        OPEN = True
                         player_bet = (p.id, p_move[1]) if not player_bet or p_move[1] < player_bet[2] else player_bet
-
+                # Player folded..
                 if p_move[0] == 'FOLD':
                     self.players.remove(p)
+
+                # Otherwise, a player must have checked!
+
+                moves.append(p_move) # Store the move a player makes
 
             self.round_history = self.round_history + moves
             moves.clear()
 
-            # if betting is open, we have to see if everyone calls/folds/raises. We continue until all call
-            # RAISE/CALL Round
+            # if betting is open, we have to see if everyone calls/folds/raises.
+            # RAISE round
             # -------------------
             if OPEN:
                 player_raise = None
-                while not all(m[0] == "CALL" for m in moves):
+                while not all(m[0] == "CALL" or m[0] == "FOLD" for m in moves):
                     moves.clear()
                     for p in self.players:
                         if len(self.players) == 1: # All other players folded
                             print("Player" + p.id + "wins!")
                             return p.id
 
-                        p_move = p.act(max_bet, player_bet[1], self.river, self.round_history)
+                        p_move = p.act(OPEN, max_bet, player_bet[1], self.river, self.round_history)
                         moves.append(p_move) # Store the move a player makes
                         if p_move[0] is "RAISE":
                             if p_move[1] > max_bet or p_move[1] <= player_bet[1]: # Invalid bet, removing player
@@ -380,8 +440,9 @@ class Table:
             self.turn += 1
 
         print("ROUND_HISTORY: \n" + str(self.round_history))
-        winner = compare_ranks(poker_hands((self.players[0].cards + self.river)), poker_hands(self.players[1].cards + self.river))
-        return winner
+        p_hands = [p.best_hand(self.river) for p in self.players]
+        winners = compare_hands(p_hands)
+        return winners
 
 
 # Testing Poker Hands detection
@@ -390,10 +451,10 @@ print_poker_hand(poker_hands([0, 0+13, 0+26, 0+39, 1])) # 4-of-a-kind
 print_poker_hand(poker_hands([0, 0+13, 0+26, 2, 1])) # 3-of-a-kind
 print_poker_hand(poker_hands([0, 0+13, 3, 4, 1])) # 2-of-a-kind
 print_poker_hand(poker_hands([0, 2+13, 2, 4+13, 4])) # Two 2-of-a-kind's
-print_poker_hand(poker_hands([4+26, 2+13, 2, 4+13, 4])) # Full House
 print_poker_hand(poker_hands([12, 5, 13])) # High Card with Ace
 print_poker_hand(poker_hands([12, 0, 1, 2, 3+13])) # Straight with an Ace
 print_poker_hand(poker_hands([0,1,2,3,5])) # Flush of Diamonds
+print_poker_hand(poker_hands([4+26, 2+13, 2, 4+13, 4])) # Full House
 """
 
 # Testing Poker Hand comparisons
@@ -417,22 +478,13 @@ print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p1 wins, seco
 """
 
 # Testing Winning Percentage Based on Hand and River Cards
-"""
 win_percentage([1, 31], [2, 5, 7]) # Three 2-pairs
 win_percentage([1, 31], [14, 8, 27]) # 3-of-a-kind
 win_percentage([1, 2], [3, 17, 18]) # Straight
 win_percentage([1, 3], [5, 7, 9]) # Flush
 win_percentage([1, 4], [14, 17, 30]) # Full House
 win_percentage([1, 14], [27, 40, 9]) # 4-of-a-kind
-# win_percentage([1, 2], [3, 4, 5]) # Straight-Flush
-"""
-
-"""
-TODO: Make sure this game works
-P1: ['Queen of Hearts', 'Jack of Spades']
-P2: ['10 of Diamonds', '5 of Hearts']
-River: ['2 of Diamonds', '4 of Diamonds', '8 of Hearts', '6 of Hearts', '9 of Spades']
-"""
+win_percentage([1, 2], [3, 4, 5]) # Straight-Flush
 
 # Sample Game
 p1 = Player(1, 1000)
