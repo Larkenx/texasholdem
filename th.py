@@ -408,7 +408,8 @@ class Table:
                 print("All players folded! Splitting the spot amongst the players who folded last...")
                 split_pot = self.pot / len(folded_players)
                 for p in folded_players:
-                    p.chips +=
+                    p.chips += split_pot
+                    
                 return None
             self.round_history = self.round_history + moves
             moves.clear()
