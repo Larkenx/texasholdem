@@ -409,8 +409,9 @@ class Table:
                 split_pot = self.pot / len(folded_players)
                 for p in folded_players:
                     p.chips += split_pot
-                    
+
                 return None
+
             self.round_history = self.round_history + moves
             moves.clear()
             # At the end of the round, if a player made a bet, he/she must put their chips into the pot
