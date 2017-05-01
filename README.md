@@ -1,4 +1,60 @@
 # Texas Hold'em
+Information:
+	Overall poker hand rankings table:
+
+	1 - Royal Flush - [10, J, Q, K, A] Same Suit
+	2 - Straight Flush - [3, 4, 5, 6, 7] Same Suit
+	3 - Four of a kind - [2, J, J, J, J]
+	4 - Full House - [2, 2, Q, Q, Q] (pair and three of kind)
+	5 - Flush - [3, 6, 9, Q, K] Same Suit
+	6 - Straight - [3, 4, 5, 6, 7]
+	7 - Three of a kind - [4, 2, A, A, A]
+	8 - Two pairs - [4, 8, 8, A, A]
+	9 - Pair - [3, 6, 7, Q, Q]
+	10 - High Card
+
+	deck: [0...51]
+	card = int
+	ranking = int (poker ranking above represent hand)
+	highcard = int
+
+
+Overall Evaulating Idea:
+
+	Royal flush / Straight flush / Flush (checking suits):
+		1) Seperate suits:
+
+	Pairs / # of a kind / Full house (not checking suits):
+		1) Find pairs:
+			create temp array
+			var x = mod 13 on each card in hand and on table, push into temp
+			pass through temp, counting each x
+			if there is exactly 4 x's present, record x as var fok (four of kind) and remove x's
+			if there is exactly 3 x's present, record x as var tok (three of kind) and remove x
+			if there is exactly 2 x's present, add x to pairs array and remove x
+				*if len(pairs) > 2, remove smallest number pair*
+			once pairs removed, record highcard of whats left in temp.
+
+		2) Check hand:
+			if fok (four of kind) not None:
+				ranking = 3, (use fok and highcard variables when comparing multiple four of kinds hands)
+				return/break
+			if (lens(pairs) >= 1) && tok not None:
+				ranking = 4
+				find highest number pair, assign to var pair (use vars pair and tok when comparing multiple full houses)
+				return/break
+			if tok not None:
+				ranking = 7 (use variable tok and highcard when comparing multiple 3 of a kind hands)
+				return/break
+			if pairs not None (empty?):
+				if lens(pairs) = 2:
+
+
+	Set ranking while finding hands (unless if current ranking smaller than replacement)
+
+
+Notes:
+	Efficiency improvements can/will be made.
 
 - Group Members: Steven Myers and Samuel Eleftheri
 
