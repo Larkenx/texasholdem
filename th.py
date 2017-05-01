@@ -145,7 +145,6 @@ def rank_poker_hands(hands):
     return sorted(ranked_hands, key=lambda x: (-x[0], -x[1]))
 
 
-
 def compare_hands(player_hands):
     """Accepts a list of tuples, where each tuple is a player ID (number) players' submitted best hands.
     Returns the player ID of the best hand. If there are ties, then it will return a list of player ID's that tied"""
@@ -292,13 +291,21 @@ class Player:
     def act(self, OPEN, max_bet, current_bet, river, history):
         """ Player function to interact with the game. This function ought to return the action the
         player wants to take, up to and including the amount of money they want to bet. """
-        return self.id, ["FOLD"]
-        '''
-        if self.id == 1:
-            return ["CALL"]
+        best_hand = self.best_hand(river)
+        if OPEN:
+            '''Available actions are RAISE, CALL, and FOLD'''
+            if current_bet <= 15:
+                return self.id, ["RAISE", 20]
+            else:
+                return self.id, ["CALL"]
         else:
-            return ["FOLD"]
-        '''
+            '''Available actions are BET, CHECK, and FOLD'''
+            if best_hand[0] == "High-Card" and len(river) > 3:
+                return self.id, ["FOLD"]
+            elif best_hand[0] in ("Straight", "Straight-Flush", "Full-House", "4-of-a-kind", "3-of-a-kind"):
+                return self.id, ["BET", 50]
+            else:
+                return self.id, ["CHECK"]
 
 class Table:
     def __init__(self, players):
@@ -349,10 +356,6 @@ class Table:
         # FLOP, TURN, RIVER
         # -----------------
         while len(self.river) <= 5:
-            if len(self.players) == 0:
-                print("All players folded! Splitting the spot...")
-                return None
-
             # DEBUG
             print("==========")
             print(STAGES[self.turn])
@@ -367,6 +370,7 @@ class Table:
             OPEN = False
             player_bet = [None, 0] # Player bet is a tuple of (Player.ID, BET AMOUNT)
             folded_players = []
+            stage_history = []
 
             # If not OPEN, then this is the an initial betting round and is said to be an CLOSED pot.
             # Stage 1 possible actions are CHECK, FOLD, and BET+AMT
@@ -383,22 +387,24 @@ class Table:
                 # pass the river and round history.
                 p_move = p.act(OPEN, max_bet, 0, self.river, self.round_history)
                 p_action = p_move[1]
-                # Player chose to bet...
                 if p_action[0] == "BET":
                     if p_action[1] > max_bet: # Invalid bet, removing player
                         print("Player {0} made an invalid bet! Kicking from table".format(p.id))
-                        self.players.remove(p)
-                        p_move = (p.id, ["FOLD"])
+                        folded_players.append(p)
+                        p_move = (p.id, ["FOLD"]) # auto fold the player
                     else: # Otherwise, record the max bet so far
-                        OPEN = True
                         player_bet = (p.id, p_action[1]) if p_action[1] > player_bet[1] else player_bet
-
-                # Player folded..
-                if p_action[0] == "FOLD":
+                elif p_action[0] == "FOLD":
                     print("Player " + str(p.id) + " has folded")
                     folded_players.append(p)
+                elif p_action[0] == "CHECK":
+                    pass
+                else:
+                    print(p_action)
+                    print("Player {0} gave an invalid action! Kicking from table".format(p.id))
+                    folded_players.append(p)
+                    p_move = (p.id, ["FOLD"])  # auto fold the player
 
-                # Otherwise, a player must have checked!
                 moves.append(p_move) # Store the move a player makes
 
             # Filter out the players who folded
@@ -409,21 +415,17 @@ class Table:
                 split_pot = self.pot / len(folded_players)
                 for p in folded_players:
                     p.chips += split_pot
-
                 return None
 
-            self.round_history = self.round_history + moves
+            OPEN = player_bet[0] != None
+
+            stage_history = stage_history + moves
             moves.clear()
             # At the end of the round, if a player made a bet, he/she must put their chips into the pot
             # if betting is open, we have to see if everyone calls/folds/raises.
             # RAISE round
             # -------------------
             if OPEN:
-                # Deduct the last bet from the player who bet, and add it to the pot
-                player_who_bet = self.player_dict[player_bet[0]]
-                self.pot += player_bet[0]
-                player_who_bet.chips -= player_bet[1]
-
                 while not all(m[1][0] == "CALL" or m[1][0] == "FOLD" for m in moves):
                     moves.clear()
                     for p in self.players:
@@ -446,15 +448,24 @@ class Table:
                         moves.append(p_move) # Store the move a player makes
 
                     player_bet = player_raise
-                    self.round_history = self.round_history + moves
+                    stage_history = stage_history + moves
 
-                self.round_history.append(moves)
+                # At this point, all players have either called or folded to the current bet, so we can deduct all of
+                # the chips from each player at this point
                 for p in self.players:
-                    p.chips -= player_bet
-                    if p.chips >= 0:
-                        self.pot += player_bet
+                    if player_bet[1] > p.chips:
+                        print("Player {0} is going all in with {1} chips!".format(p.id, p.chips))
+                        self.pot += p.chips
+                        p.chips = 0
+                    elif p.chips == 0:
+                        print("Player {0} is already all-in!".format(p.id))
+                    else:
+                        self.pot += player_bet[1]
+                        p.chips -= player_bet[1]
+            # END OPEN round
 
             # At this point, all players have called. We're ready to deduct bets
+            self.round_history.append((STAGES[self.turn], stage_history))
             self.add_to_river()
 
             if self.turn == 0:
@@ -463,9 +474,17 @@ class Table:
 
             self.turn += 1
 
-        print("ROUND_HISTORY: \n" + str(self.round_history))
+        print("="*12)
+        print("GAME HISTORY: \n{0}".format("\n".join(str(stage) for stage in self.round_history)))
+        print("="*12)
+
         p_hands = [p.best_hand(self.river) for p in self.players]
         winners = compare_hands(p_hands)
+        if len(winners) == 1:
+            print("Player {0} won!".format(self.player_dict[winners[0]].id))
+        else:
+            print("Players {0} tied!".format(", ".join(str(pid) for pid in winners)))
+
         return winners
 
 
@@ -516,4 +535,4 @@ win_percentage([1, 2], [3, 4, 5]) # Straight-Flush
 p1 = Player(1, 1000)
 p2 = Player(2, 1000)
 t1 = Table([p1, p2])
-print(t1.play())
+t1.play()

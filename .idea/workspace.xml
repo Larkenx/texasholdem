@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="82215b7c-6d08-45b2-b631-9e92b2de2a66" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/th.py" afterPath="$PROJECT_DIR$/th.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/texasholdem$th.coverage" NAME="th Coverage Results" MODIFIED="1493609018529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="texasholdem" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="th.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/th.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="613">
+              <caret line="479" column="0" lean-forward="true" selection-start-line="479" selection-start-column="0" selection-end-line="479" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="false" />
+                <element signature="e#284#592#0" expanded="false" />
+                <element signature="e#622#4459#0" expanded="false" />
+                <element signature="e#622#1542#1" expanded="false" />
+                <element signature="e#2049#2156#0" expanded="false" />
+                <element signature="e#2286#2631#0" expanded="false" />
+                <element signature="e#2365#2631#0" expanded="false" />
+                <element signature="e#2675#3059#0" expanded="false" />
+                <element signature="e#2716#2821#0" expanded="false" />
+                <element signature="e#2872#3059#0" expanded="false" />
+                <element signature="e#2933#3053#0" expanded="false" />
+                <element signature="e#3304#3417#0" expanded="false" />
+                <element signature="e#3471#3719#0" expanded="false" />
+                <element signature="e#3602#3719#0" expanded="false" />
+                <element signature="e#3786#4039#0" expanded="false" />
+                <element signature="e#3915#4039#0" expanded="false" />
+                <element signature="e#3949#4033#0" expanded="false" />
+                <element signature="e#4084#4205#0" expanded="false" />
+                <element signature="e#4114#4205#0" expanded="false" />
+                <element signature="e#4205#4303#0" expanded="false" />
+                <element signature="e#4494#4998#0" expanded="false" />
+                <element signature="e#4644#4980#0" expanded="false" />
+                <element signature="e#4767#4980#0" expanded="false" />
+                <element signature="e#5033#6203#0" expanded="false" />
+                <element signature="e#5033#5722#1" expanded="false" />
+                <element signature="e#5743#5947#0" expanded="false" />
+                <element signature="e#6000#6140#0" expanded="false" />
+                <element signature="e#6243#7581#0" expanded="false" />
+                <element signature="e#6499#6960#0" expanded="false" />
+                <element signature="e#6530#6746#0" expanded="false" />
+                <element signature="e#7050#7556#0" expanded="false" />
+                <element signature="e#7300#7461#0" expanded="false" />
+                <element signature="e#7637#8611#0" expanded="false" />
+                <element signature="e#7637#7901#1" expanded="false" />
+                <element signature="e#8086#8597#0" expanded="false" />
+                <element signature="e#8189#8393#0" expanded="false" />
+                <element signature="e#8613#9229#1" expanded="false" />
+                <element signature="e#9270#10531#0" expanded="false" />
+                <element signature="e#9407#9733#0" expanded="false" />
+                <element signature="e#9892#9943#1" expanded="false" />
+                <element signature="e#10342#10459#0" expanded="false" />
+                <element signature="e#10590#10760#0" expanded="false" />
+                <element signature="e#10793#10978#0" expanded="false" />
+                <element signature="e#11020#11295#0" expanded="false" />
+                <element signature="e#12778#12961#0" expanded="false" />
+                <element signature="e#12998#13113#0" expanded="false" />
+                <element signature="e#13150#13201#0" expanded="false" />
+                <element signature="e#13235#13320#0" expanded="false" />
+                <element signature="e#13358#13395#0" expanded="false" />
+                <element signature="e#20623#21174#1" expanded="false" />
+                <element signature="e#21209#22781#1" expanded="false" />
+                <element signature="e#22842#23192#1" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Steven Myers &lt;larkenx@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="clone-se" />
+      </map>
+    </option>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/master" />
+                <branch-info repo="$PROJECT_DIR$" source="origin/new_master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/th.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/th.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1066" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texasholdem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="texasholdem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/th.py" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.th">
+    <configuration default="false" name="th" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Larken\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/th.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Larken\AppData\Local\Programs\Python\Python36-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/th.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="texasholdem" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="texasholdem" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.th" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.th" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="82215b7c-6d08-45b2-b631-9e92b2de2a66" name="Default" comment="" />
+      <created>1493593787688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1493593787688</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Fixing up the betting/raising system">
+      <created>1493597994140</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1493597994140</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.108208954" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5021322" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="WINDOWED" visible="true" show_stripe_button="true" weight="0.2165272" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="1921" y="31" width="1540" height="1018" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290461" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixing up the betting/raising system" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing up the betting/raising system" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/th.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#284#592#0" expanded="false" />
+            <element signature="e#622#4459#0" expanded="false" />
+            <element signature="e#622#1542#1" expanded="false" />
+            <element signature="e#2049#2156#0" expanded="false" />
+            <element signature="e#2286#2631#0" expanded="false" />
+            <element signature="e#2365#2631#0" expanded="false" />
+            <element signature="e#2675#3059#0" expanded="false" />
+            <element signature="e#2716#2821#0" expanded="false" />
+            <element signature="e#2872#3059#0" expanded="false" />
+            <element signature="e#2933#3053#0" expanded="false" />
+            <element signature="e#3304#3417#0" expanded="false" />
+            <element signature="e#3471#3719#0" expanded="false" />
+            <element signature="e#3602#3719#0" expanded="false" />
+            <element signature="e#3786#4039#0" expanded="false" />
+            <element signature="e#3915#4039#0" expanded="false" />
+            <element signature="e#3949#4033#0" expanded="false" />
+            <element signature="e#4084#4205#0" expanded="false" />
+            <element signature="e#4114#4205#0" expanded="false" />
+            <element signature="e#4205#4303#0" expanded="false" />
+            <element signature="e#4494#4998#0" expanded="false" />
+            <element signature="e#4644#4980#0" expanded="false" />
+            <element signature="e#4767#4980#0" expanded="false" />
+            <element signature="e#5033#6203#0" expanded="false" />
+            <element signature="e#5033#5722#1" expanded="false" />
+            <element signature="e#5743#5947#0" expanded="false" />
+            <element signature="e#6000#6140#0" expanded="false" />
+            <element signature="e#6243#7581#0" expanded="false" />
+            <element signature="e#6499#6960#0" expanded="false" />
+            <element signature="e#6530#6746#0" expanded="false" />
+            <element signature="e#7050#7556#0" expanded="false" />
+            <element signature="e#7300#7461#0" expanded="false" />
+            <element signature="e#7637#8611#0" expanded="false" />
+            <element signature="e#7637#7901#1" expanded="false" />
+            <element signature="e#8086#8597#0" expanded="false" />
+            <element signature="e#8189#8393#0" expanded="false" />
+            <element signature="e#8613#9229#1" expanded="false" />
+            <element signature="e#9270#10531#0" expanded="false" />
+            <element signature="e#9407#9733#0" expanded="false" />
+            <element signature="e#9892#9943#1" expanded="false" />
+            <element signature="e#10342#10459#0" expanded="false" />
+            <element signature="e#10590#10760#0" expanded="false" />
+            <element signature="e#10793#10978#0" expanded="false" />
+            <element signature="e#11020#11295#0" expanded="false" />
+            <element signature="e#12778#12961#0" expanded="false" />
+            <element signature="e#12998#13113#0" expanded="false" />
+            <element signature="e#13150#13201#0" expanded="false" />
+            <element signature="e#13235#13320#0" expanded="false" />
+            <element signature="e#13358#13395#0" expanded="false" />
+            <element signature="e#20623#21174#1" expanded="false" />
+            <element signature="e#21209#22781#1" expanded="false" />
+            <element signature="e#22842#23192#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/th.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#284#592#0" expanded="false" />
+            <element signature="e#622#4459#0" expanded="false" />
+            <element signature="e#622#1542#1" expanded="false" />
+            <element signature="e#2049#2156#0" expanded="false" />
+            <element signature="e#2286#2631#0" expanded="false" />
+            <element signature="e#2365#2631#0" expanded="false" />
+            <element signature="e#2675#3059#0" expanded="false" />
+            <element signature="e#2716#2821#0" expanded="false" />
+            <element signature="e#2872#3059#0" expanded="false" />
+            <element signature="e#2933#3053#0" expanded="false" />
+            <element signature="e#3304#3417#0" expanded="false" />
+            <element signature="e#3471#3719#0" expanded="false" />
+            <element signature="e#3602#3719#0" expanded="false" />
+            <element signature="e#3786#4039#0" expanded="false" />
+            <element signature="e#3915#4039#0" expanded="false" />
+            <element signature="e#3949#4033#0" expanded="false" />
+            <element signature="e#4084#4205#0" expanded="false" />
+            <element signature="e#4114#4205#0" expanded="false" />
+            <element signature="e#4205#4303#0" expanded="false" />
+            <element signature="e#4494#4998#0" expanded="false" />
+            <element signature="e#4644#4980#0" expanded="false" />
+            <element signature="e#4767#4980#0" expanded="false" />
+            <element signature="e#5033#6203#0" expanded="false" />
+            <element signature="e#5033#5722#1" expanded="false" />
+            <element signature="e#5743#5947#0" expanded="false" />
+            <element signature="e#6000#6140#0" expanded="false" />
+            <element signature="e#6243#7581#0" expanded="false" />
+            <element signature="e#6499#6960#0" expanded="false" />
+            <element signature="e#6530#6746#0" expanded="false" />
+            <element signature="e#7050#7556#0" expanded="false" />
+            <element signature="e#7300#7461#0" expanded="false" />
+            <element signature="e#7637#8611#0" expanded="false" />
+            <element signature="e#7637#7901#1" expanded="false" />
+            <element signature="e#8086#8597#0" expanded="false" />
+            <element signature="e#8189#8393#0" expanded="false" />
+            <element signature="e#8613#9229#1" expanded="false" />
+            <element signature="e#9270#10531#0" expanded="false" />
+            <element signature="e#9407#9733#0" expanded="false" />
+            <element signature="e#9892#9943#1" expanded="false" />
+            <element signature="e#10342#10459#0" expanded="false" />
+            <element signature="e#10590#10760#0" expanded="false" />
+            <element signature="e#10793#10978#0" expanded="false" />
+            <element signature="e#11020#11295#0" expanded="false" />
+            <element signature="e#12778#12961#0" expanded="false" />
+            <element signature="e#12998#13113#0" expanded="false" />
+            <element signature="e#13150#13201#0" expanded="false" />
+            <element signature="e#13235#13320#0" expanded="false" />
+            <element signature="e#13358#13395#0" expanded="false" />
+            <element signature="e#20623#21174#1" expanded="false" />
+            <element signature="e#21209#22781#1" expanded="false" />
+            <element signature="e#22842#23192#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/th.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="479" column="0" lean-forward="true" selection-start-line="479" selection-start-column="0" selection-end-line="479" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#284#592#0" expanded="false" />
+            <element signature="e#622#4459#0" expanded="false" />
+            <element signature="e#622#1542#1" expanded="false" />
+            <element signature="e#2049#2156#0" expanded="false" />
+            <element signature="e#2286#2631#0" expanded="false" />
+            <element signature="e#2365#2631#0" expanded="false" />
+            <element signature="e#2675#3059#0" expanded="false" />
+            <element signature="e#2716#2821#0" expanded="false" />
+            <element signature="e#2872#3059#0" expanded="false" />
+            <element signature="e#2933#3053#0" expanded="false" />
+            <element signature="e#3304#3417#0" expanded="false" />
+            <element signature="e#3471#3719#0" expanded="false" />
+            <element signature="e#3602#3719#0" expanded="false" />
+            <element signature="e#3786#4039#0" expanded="false" />
+            <element signature="e#3915#4039#0" expanded="false" />
+            <element signature="e#3949#4033#0" expanded="false" />
+            <element signature="e#4084#4205#0" expanded="false" />
+            <element signature="e#4114#4205#0" expanded="false" />
+            <element signature="e#4205#4303#0" expanded="false" />
+            <element signature="e#4494#4998#0" expanded="false" />
+            <element signature="e#4644#4980#0" expanded="false" />
+            <element signature="e#4767#4980#0" expanded="false" />
+            <element signature="e#5033#6203#0" expanded="false" />
+            <element signature="e#5033#5722#1" expanded="false" />
+            <element signature="e#5743#5947#0" expanded="false" />
+            <element signature="e#6000#6140#0" expanded="false" />
+            <element signature="e#6243#7581#0" expanded="false" />
+            <element signature="e#6499#6960#0" expanded="false" />
+            <element signature="e#6530#6746#0" expanded="false" />
+            <element signature="e#7050#7556#0" expanded="false" />
+            <element signature="e#7300#7461#0" expanded="false" />
+            <element signature="e#7637#8611#0" expanded="false" />
+            <element signature="e#7637#7901#1" expanded="false" />
+            <element signature="e#8086#8597#0" expanded="false" />
+            <element signature="e#8189#8393#0" expanded="false" />
+            <element signature="e#8613#9229#1" expanded="false" />
+            <element signature="e#9270#10531#0" expanded="false" />
+            <element signature="e#9407#9733#0" expanded="false" />
+            <element signature="e#9892#9943#1" expanded="false" />
+            <element signature="e#10342#10459#0" expanded="false" />
+            <element signature="e#10590#10760#0" expanded="false" />
+            <element signature="e#10793#10978#0" expanded="false" />
+            <element signature="e#11020#11295#0" expanded="false" />
+            <element signature="e#12778#12961#0" expanded="false" />
+            <element signature="e#12998#13113#0" expanded="false" />
+            <element signature="e#13150#13201#0" expanded="false" />
+            <element signature="e#13235#13320#0" expanded="false" />
+            <element signature="e#13358#13395#0" expanded="false" />
+            <element signature="e#20623#21174#1" expanded="false" />
+            <element signature="e#21209#22781#1" expanded="false" />
+            <element signature="e#22842#23192#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
