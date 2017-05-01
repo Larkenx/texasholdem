@@ -144,8 +144,6 @@ def rank_poker_hands(hands):
 
     return sorted(ranked_hands, key=lambda x: (-x[0], -x[1]))
 
-
-
 def compare_hands(player_hands):
     """Accepts a list of tuples, where each tuple is a player ID (number) players' submitted best hands.
     Returns the player ID of the best hand. If there are ties, then it will return a list of player ID's that tied"""
@@ -290,15 +288,23 @@ class Player:
         return self.id, rank_poker_hands(poker_hands(self.cards + river))[0]
 
     def act(self, OPEN, max_bet, current_bet, river, history):
-        """ Player function to interact with the game. This function ought to return the action the
-        player wants to take, up to and including the amount of money they want to bet. """
-        return self.id, ["FOLD"]
-        '''
-        if self.id == 1:
-            return ["CALL"]
+        """ Player function to interact with the game. This function returns the player ID, and action a player
+        wishes to take. The available actions to them are dependent on whether or not the pot is open or closed.
+        
+        TODO:
+            -Add AI elements to determine what action a player should choose
+            -Make the player actively check their hand with the river, and determine what percentile rank their hand is
+            -Add functionality to read the history of previous moves to affect current action
+        """
+        if OPEN:
+            if current_bet < 15:
+                return self.id, ["RAISE", 20]
+            else:
+                return self.id, ["CALL"]
         else:
-            return ["FOLD"]
-        '''
+            return self.id, ["BET", 10]
+
+
 
 class Table:
     def __init__(self, players):
@@ -349,17 +355,13 @@ class Table:
         # FLOP, TURN, RIVER
         # -----------------
         while len(self.river) <= 5:
-            if len(self.players) == 0:
-                print("All players folded! Splitting the spot...")
-                return None
-
             # DEBUG
             print("==========")
             print(STAGES[self.turn])
             print("----------")
             print(self)
-            # for p in self.players:
-            #     print("P" + str(p.id) + " Win Probability: " + win_percentage(p.cards, self.river))
+            for p in self.players:
+                print("P" + str(p.id) + " Win Probability: " + win_percentage(p.cards, self.river))
 
             # Players can only bet as many chips as the number of chips held by the player with the fewest chips
             max_bet = min(p.chips for p in self.players)
@@ -421,7 +423,7 @@ class Table:
             if OPEN:
                 # Deduct the last bet from the player who bet, and add it to the pot
                 player_who_bet = self.player_dict[player_bet[0]]
-                self.pot += player_bet[0]
+                self.pot += player_bet[1]
                 player_who_bet.chips -= player_bet[1]
 
                 while not all(m[1][0] == "CALL" or m[1][0] == "FOLD" for m in moves):
