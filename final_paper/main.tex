@@ -1,0 +1,103 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+
+\usepackage{kpfonts}
+\usepackage{color}
+
+\newcommand*\Hs[1]{\ensuremath{{\color{blue} #1}{\color{red}\varheartsuit}}}
+\newcommand*\Ss[1]{\ensuremath{{\color{blue} #1}{\color{black}\spadesuit}}}
+\newcommand*\Ds[1]{\ensuremath{{\color{blue} #1}{\color{red}\vardiamondsuit}}}
+\newcommand*\Cs[1]{\ensuremath{{\color{blue} #1}{\color{black}\clubsuit}}}
+\newcommand*\NT[1]{{\color{blue} #1}{\color{black}\textsc{nt}}}
+
+
+\input{structure.tex} % Specifies the document structure and loads requires packages
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{B351 AI Project: Texas Hold 'em} % The article title
+
+\author{
+	\authorstyle{Steven Myers and Samuel Eleftheri} % Authors
+	\newline\newline % Space before institutions
+	\institution{Indiana University, Bloomington, IN, USA} % Institution 3
+}
+
+% Example of a one line author/institution relationship
+%\author{\newauthor{Person ONe} \newinstitution{Where you're from}}
+
+\date{\today} % Add a date here if you would like one to appear underneath the title block, use \today for the current date, leave empty for no date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+\thispagestyle{firstpage} % Apply the page style for the first page (no headers and footers)
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\lettrineabstract{Our final project was to build a working Texas Hold'em Poker emulator, and an AI agent to play the game efficiently. Our approach was to accurately emulate poker as it is played professionally with realistic betting systems. We built an agent that can effectively determine the best move given its cards and river by evaluating the strength of its hand by comparing its relative strength to all other possibile hands. The agent is able to determine the probabilities of }
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Here are some cards:
+\begin{table}
+\centering
+\begin{tabular}{@{}ll@{}} \toprule
+\textsf{Pair} & \Hs{3},\Ds{A},\Ss{3},\Cs{4},\Hs{K}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Describe games in AI --  generate interest here for the reader and give some background.  This is a citation: \citep{Reference1}. This sentence requires multiple citations to imply that it is better supported \citep{Reference2,Reference3}. Finally, when conducting an appeal to authority, it can be useful to cite a reference in-text, much like \cite{Reference1} do quite a bit. Oh, and make sure to check out the bear in Figure \ref{bear}.
+%------------------------------------------------
+
+\section{Playing Texas Hold 'em as an AI Problem}
+
+Describe how you've transformed this game to a purely AI agent.  Explain your strategies and reasons for adopting them.
+%------------------------------------------------
+
+\section{Code}
+
+Discuss how you coded your strategies, data structures, {\it etc.}
+\begin{table}
+	\caption{Example table}
+	\centering
+	\begin{tabular}{llr}
+		\toprule
+		\multicolumn{2}{c}{Name} \\
+		\cmidrule(r){1-2}
+		First Card & Second Card  & Probability \\
+		\midrule
+		\Hs{A} & \Cs{A} & $P(\Cs{A}|\Hs{A})\,P(\Hs{A})$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+%------------------------------------------------
+
+\section{Results}
+Discuss the result of your project -- what went right and what went wrong.  For the former, what would you do to make it even better? For the latter, what would you do differently?
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+% \printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
