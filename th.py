@@ -227,52 +227,54 @@ def compare_ranks(p1_hand, p2_hand):
 		b) check each suit total (ex. 4 hearts - close - higher percentage)
 		c) check possibility of straight (ex. 1, 2, 4, 5 - missing one card - higher percentage) """
 
+
 def win_percentage(p_hand, river):
-    """Determines probability of winning based ONLY ON current player's best hand
-    returns winning percentage"""
-    hand_probabilities = { # Total Frequency: 2,598,960
-        'Straight-Flush' : 0.00139, # 36 frequency
-        '4-of-a-kind' : 0.0240, 	# 624
-        'Full-House' : 0.1441, 		# 3744
-        'Flush' : 0.1965, 			# 5108
-        'Straight': 0.3925, 		# 10200
-        '3-of-a-kind': 2.1128, 		# 54912
-        '2-of-a-kind': 42.2569, 	# 1,098,240
-    }
+    """Determines probability of winning based ONLY ON current player's best hand 
+    returns winning percentage. Plan to implement future hand possibilites after current best hand"""
 
     hand = p_hand + river
-    ordered = rank_poker_hands(poker_hands(hand))
     num_of_cards = len(hand)
 
-    # print(ordered)
-    rank = ordered[0][0]
+    private_hand_rank = (p_hand[0] % 13) + (p_hand[1] % 13);  # low private cards or high private cards
+    rank_ordered = rank_poker_hands(poker_hands(hand))  # checking for ranked hands
+    rank = rank_ordered[0][0]  # best hand currently
 
-    """
-	TODO: Create function to find possibility
-	"""
+    suite_count = [[] for x in range(0, 4)]
 
-    if (rank == 7): # 4-of-a-kind
+    # count suits in hand
+    for card in hand:
+        suite = (card // 13)
+        suite_count[suite].append(suite)
+
+    if (rank == 7):  # 4-of-a-kind
         return "4-of-a-kind Probability"
 
-    if (rank == 6): # full house
+    if (rank == 3) and (rank_ordered[1][0] == 2):  # full house
         return "Full House Probability"
 
-    if (rank == 5): # flush
+    if (rank == 5):  # flush
         return "Flush Probability"
 
-    if (rank == 4): # straight
+    if (rank == 4):  # straight
         return "Straight Probability"
 
-    if (rank == 3): # 3-of-a-kind
+    if (rank == 3):  # 3-of-a-kind
         return "3-of-a-kind Probability"
 
-    if (rank == 2): # 2-pair
-        if (ordered[1][0] == 2): # two 2-pairs
+    if (rank == 2):  # 2-pair
+        if (rank_ordered[1][0] == 2):  # two 2-pairs
             return "2 2-Pairs Probability"
         return "2-Pair Probability"
 
-    if (rank == 1): # High Card
-        return "High Card Probability"
+    if (rank == 1):  # High Card
+        new_rank = private_hand_rank / (
+        20 * num_of_cards)  # checking highest card in private_hand (since those only one that matters)
+        if (len(max(suite_count)) == 3):  # there are 3 similar suits
+            new_rank = new_rank + (len(max(suite_count)) / 8)
+        if (len(max(suite_count)) == 4):  # there are 3 similar suits
+            new_rank = new_rank + (len(max(suite_count)) / 6)
+        return "{:.3f}%".format(new_rank)
+
 
 class Player:
     def __init__(self, id, chips):
