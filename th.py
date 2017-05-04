@@ -233,47 +233,146 @@ def win_percentage(p_hand, river):
     returns winning percentage. Plan to implement future hand possibilites after current best hand"""
 
     hand = p_hand + river
+    hand_list = [x % 13 for x in hand]
     num_of_cards = len(hand)
-
+	
+    hand_rank = sum(hand_list)
     private_hand_rank = (p_hand[0] % 13) + (p_hand[1] % 13);  # low private cards or high private cards
+	
+    face_count = [[] for x in range(0, 13)]  # Store cards from the input into bins. They are divided by face value
+    suite_count = [[] for x in range(0, 4)]
+	
     rank_ordered = rank_poker_hands(poker_hands(hand))  # checking for ranked hands
     rank = rank_ordered[0][0]  # best hand currently
-
-    suite_count = [[] for x in range(0, 4)]
-
+	
+    twos = []
+    threes = []
+    straights = []
+    flushes = []
+	
+	#DEBUG:
+    #print(str([card_to_string(c) for c in hand]))
+	
     # count suits in hand
     for card in hand:
-        suite = (card // 13)
-        suite_count[suite].append(suite)
+        value, suite = (card % 13), (card // 13)
+        face_count[value].append(card)
+        suite_count[suite].append(card)
+		
+    for i in range(0, 4): # flush
+        if len(suite_count[i]) == 5:
+            fhand = ["Flush", suite_count[i]]
+            flushes.append(fhand[1])
+        elif len(suite_count[i]) > 5:
+            for j in range(0, len(suite_count[i]) - 4 ):
+                fhand = ["Flush", suite_count[i][j:j+5]]
+                flushes.append(fhand[1])
+				
+    for index in range(0, 13): # Find n-pairs
+        num = len(face_count[index])
+        if num > 1:
+            if num == 2:
+                twos.append(face_count[index])
+            if num == 3:
+                threes.append(face_count[index])
+	
+    for i in range(0, (14 - 5)): # straight
+        possible_straight = face_count[i:i+5]
+        if all(c for c in possible_straight): # using implicitness of [] != True
+            straights.append(sum(possible_straight, []))
 
+    if (rank == 8): # Never will happen (one day maybe)
+        percentage = .99
+        return "{:.3f}".format(percentage)	
+		
     if (rank == 7):  # 4-of-a-kind
-        return "4-of-a-kind Probability"
+        percentage = .98
+        return "{:.3f}".format(percentage)	
 
-    if (rank == 3) and (rank_ordered[1][0] == 2):  # full house
-        return "Full House Probability"
+    if (rank == 6):  # full house
+        full_house_hand = twos[0] + threes[0]
+        fhh_values = [x % 13 for x in full_house_hand]
+        percentage = sum(fhh_values) / 58
+        percentage = percentage/20 + .93
+        return "{:.3f}".format(percentage)	
 
     if (rank == 5):  # flush
-        return "Flush Probability"
+        percentage = 0
+        percentage = sum(flushes[0]) / 49
+		
+        if (num_of_cards == 5):
+            percentage = percentage/5.65 + .66
+        if (num_of_cards == 6):
+            percentage = percentage/6 + .74
+        if (num_of_cards == 7):
+            percentage = percentage/6 + .74
+
+        return "{:.3f}".format(percentage)	
 
     if (rank == 4):  # straight
-        return "Straight Probability"
+        straight_values = [x % 13 for x in straights[0]] 
+        percentage = sum(straight_values)/50 # 10+J+Q+K+Ace = 50 (value of straight)
+        percentage = percentage/4.75 + .60
+        return "{:.3f}".format(percentage)
 
     if (rank == 3):  # 3-of-a-kind
-        return "3-of-a-kind Probability"
+        percentage = 0
+		
+        if (threes[0][0] % 13) == 0:
+            percentage = 2/36 # (value 2 / 36 total)
+        else:
+            percentage = (threes[0][0] % 13 * 3) / 36
+			
+        if (num_of_cards == 5):
+            percentage = percentage/9 + .80
+        if (num_of_cards == 6):
+            percentage = percentage/4.5 + .60
+        if (num_of_cards == 7):
+            percentage = percentage/4.5 + .60
+        return "{:.3f}".format(percentage)
 
     if (rank == 2):  # 2-pair
         if (rank_ordered[1][0] == 2):  # two 2-pairs
-            return "2 2-Pairs Probability"
-        return "2-Pair Probability"
+		
+			# If 2 pairs detected
+            if ((twos[1][0] % 13) == 0):
+                percentage = (twos[0][0] % 13 + 1)/13					
+            elif ((twos[0][0] % 13) == 0):
+                percentage = (twos[1][0] % 13 + 1)/13			
+            else:
+                percentage = ((twos[0][0] % 13) + (twos[1][0] % 13)) / 26
+				
+			# Based on number of cards 	
+            if (num_of_cards == 5):
+                percentage = percentage/4 + .60
+            if (num_of_cards == 6):
+                percentage = percentage/2 + .40
+            if (num_of_cards == 7):
+                percentage = percentage/1.75 + .375
+            return "{:.3f}".format(percentage)
+			
+        percentage = ((twos[0][0] % 13) / 13)
+		
+		# If 2 pairs detected
+        if (percentage == 0):
+            percentage = 1 / 13
+		# Based on number of cards 
+        if (num_of_cards == 2): # Preflop
+            percentage = percentage/2 + .50
+        if (num_of_cards == 5): # Flop
+            percentage = percentage/2 + .22
+        if (num_of_cards == 6):
+            percentage = percentage/3 + .20
+        if (num_of_cards == 7):
+            percentage = percentage/2 + .05				
+        return "{:.3f}".format(percentage)
 
     if (rank == 1):  # High Card
-        new_rank = private_hand_rank / (
-        20 * num_of_cards)  # checking highest card in private_hand (since those only one that matters)
-        if (len(max(suite_count)) == 3):  # there are 3 similar suits
-            new_rank = new_rank + (len(max(suite_count)) / 8)
-        if (len(max(suite_count)) == 4):  # there are 3 similar suits
-            new_rank = new_rank + (len(max(suite_count)) / 6)
-        return "{:.3f}%".format(new_rank)
+        percentage = (private_hand_rank / (13 * num_of_cards))  # checking highest card in private_hand
+        percentage += (len(max(suite_count)) / 13) # flush detection
+        if num_of_cards > 4: # after preflop
+            percentage /= 2
+        return "{:.3f}".format(percentage)
 
 
 class Player:
@@ -305,6 +404,7 @@ class Player:
             else:
                 return self.id, ["CALL"]
         else:
+            """
             '''Available actions are BET, CHECK, and FOLD'''
             # FOLD if we only have a high card that's less than ~8
             if best_hand[0] == 1 and best_hand[1] < 9:
@@ -315,7 +415,20 @@ class Player:
             # Otherwise, we can check to see what comes next!
             else:
                 return self.id, ["CHECK"]
-
+            """
+			
+            '''Available actions are BET, CHECK, and FOLD'''
+            # FOLD if we only have a high card that's less than ~8
+            if float(win_percentage(self.cards, river)) <= .2:
+                return self.id, ["FOLD"]
+            # If our hand is a 3-of-a-kind or better, make a BET
+            elif float(win_percentage(self.cards, river)) >= .8:
+                return self.id, ["BET", 10*best_hand[0]]
+            # Otherwise, we can check to see what comes next!
+            else:
+                return self.id, ["CHECK"]
+				
+				
 class Table:
     def __init__(self, players, debug=False):
         """Initialize a single round of the game. The cards start out as a fresh deck. River is empty."""
@@ -380,8 +493,9 @@ class Table:
             print(STAGES[self.turn])
             print("="*12)
             print(self)
-            # for p in self.players:
-            #     print("P" + str(p.id) + " Win Probability: " + win_percentage(p.cards, self.river))
+			
+            for p in self.players:
+                print("P" + str(p.id) + " Win Probability: " + win_percentage(p.cards, self.river))
 
             # Players can only bet as many chips as the number of chips held by the player with the fewest chips
             max_bet = min(p.chips for p in self.players)
@@ -456,7 +570,7 @@ class Table:
                     for p in self.players:
                         # TODO: Fix up some of the problems that occur when all players fold
                         if len(self.players) == 1: # All but one players folded
-                            print("Player" + p.id + "wins!")
+                            print("Player" + int(p.id) + "wins!")
                             return p.id
 
                         p_move = p.act(OPEN, max_bet, player_bet[1], self.river, self.round_history)
@@ -553,15 +667,114 @@ class Table:
 # print(compare_ranks(poker_hands([10, 9]), poker_hands([5, 10]))) # p1 wins, second highest card
 
 # Testing Winning Percentage Based on Hand and River Cards
-"""
-win_percentage([1, 31], [2, 5, 7]) # Three 2-pairs
-win_percentage([1, 31], [14, 8, 27]) # 3-of-a-kind
-win_percentage([1, 2], [3, 17, 18]) # Straight
-win_percentage([1, 3], [5, 7, 9]) # Flush
-win_percentage([1, 4], [14, 17, 30]) # Full House
-win_percentage([1, 14], [27, 40, 9]) # 4-of-a-kind
-win_percentage([1, 2], [3, 4, 5]) # Straight-Flush
-"""
+# uncomment line labled debug in win_percentage for easier read
+'''
+print("="*12)
+print("High Card:")
+print("="*12)
+print(win_percentage([12, 24], [])) # HAND: A K
+print(win_percentage([7, 19], [])) # HAND: 9 8
+print(win_percentage([1, 15], [])) # HAND: 3 4
+print()
+print(win_percentage([12, 11], [])) 
+print(win_percentage([7, 8], [])) 
+print(win_percentage([1, 2], [])) 
+print()
+print(win_percentage([12, 24], [5, 40, 23]))  
+print(win_percentage([1, 15], [21, 5, 42])) 
+print()
+print("="*12)
+print("1 Pair:")
+print("="*12)
+print(win_percentage([0, 13], [])) # 2 Pair
+print(win_percentage([7, 20], [])) # 10 Pair
+print(win_percentage([12, 25], [])) # Ace Pair
+print()
+print(win_percentage([0, 4], [20, 13, 34])) # 2 pair
+print(win_percentage([12, 6], [20, 25, 34])) # Ace pair
+print()
+print(win_percentage([0, 15], [21, 13, 42, 10])) # 2 pair
+print(win_percentage([12, 6], [20, 25, 34, 0])) # Ace pair
+print()
+print(win_percentage([0, 15], [21, 13, 42, 10, 45])) # 2 pair
+print(win_percentage([12, 15], [25, 14, 42, 10, 45])) # Ace Pair
+print()
+print("="*12)
+print("2 Pairs:")
+print("="*12)
+print(win_percentage([0, 1], [13, 14, 42])) # 2 Pair and 3 Pair
+print(win_percentage([11, 12], [24, 25, 7])) # A pair and K Pair
+print()
+print(win_percentage([0, 1], [13, 14, 42, 4])) # 2 Pair and 3 Pair
+print(win_percentage([11, 12], [24, 25, 7, 4])) # A pair and K Pair
+print()
+print(win_percentage([0, 1], [13, 14, 42, 4, 48])) # 2 Pair and 3 Pair
+print(win_percentage([11, 12], [24, 25, 7, 4, 40])) # A pair and K Pair
+print()
+print("="*12)
+print("3-of-a-kind:")
+print("="*12)
+print(win_percentage([12, 26], [27, 0, 13])) # 3-of-a-kind (2s)
+print(win_percentage([12, 32], [27, 6, 19])) # 3-of-a-kind (8s)
+print(win_percentage([12, 23], [25, 6, 38])) # 3-of-a-kind (As)
+print()
+print(win_percentage([12, 26], [27, 0, 13, 42])) # 3-of-a-kind (2s)
+print(win_percentage([12, 32], [27, 6, 19, 42])) # 3-of-a-kind (8s)
+print(win_percentage([12, 23], [25, 6, 38, 42])) # 3-of-a-kind (As)
+print()
+print(win_percentage([12, 26], [27, 0, 13, 42, 46])) # 3-of-a-kind (2s)
+print(win_percentage([12, 32], [27, 6, 19, 42, 46])) # 3-of-a-kind (8s)
+print(win_percentage([12, 23], [25, 6, 38, 42, 46])) # 3-of-a-kind (As)
+print()
+print("="*12)
+print("Straight:")
+print("="*12)
+print(win_percentage([0, 1], [15, 16, 17])) # Straight (2-5)
+print(win_percentage([5, 6], [20, 21, 35])) # Straight (7-J)
+print(win_percentage([8, 9], [23, 24, 25])) # Straight (10-Ace)
+print()
+print("="*12)
+print("Flushes:")
+print("="*12)
+print(win_percentage([0, 1], [2, 4, 5])) # Flush (2-5)
+print(win_percentage([5, 6], [7, 9, 10])) # Flush (7-J)
+print(win_percentage([7, 9], [10, 11, 12])) # Flush (10-Ace)
+print()
+print(win_percentage([0, 1], [2, 4, 5, 39])) # Flush (2-5)
+print(win_percentage([5, 6], [7, 9, 10, 39])) # Flush (7-J)
+print(win_percentage([7, 9], [10, 11, 12, 39])) # Flush (10-Ace)
+print()
+print("="*12)
+print("Full House:")
+print("="*12)
+print(win_percentage([0, 1], [13, 26, 14])) # Full House (2, 3)
+print(win_percentage([5, 6], [18, 31, 19])) # Full House (7, 8)
+print(win_percentage([11, 12], [24, 37, 25])) # Full House (K, Ace)
+print()
+print("="*12)
+print("4-Of-A-Kind:")
+print("="*12)
+print(win_percentage([0, 13], [26, 39, 10])) # 4-of-a-kind (2s)
+print(win_percentage([12, 25], [38, 51, 5])) # 4-of-a-kind (As)
+print()
+print("="*12)
+print("Straight-Flush:")
+print("="*12)
+print(win_percentage([0, 1], [2, 3, 4])) # Straight-Flush (2-7)
+print(win_percentage([8, 9], [10, 11, 12])) # Straight-Flush (10-A)
+'''
+
+#SHORT VERSION
+# uncomment line labled debug in win_percentage for easier read
+'''
+print(win_percentage([1, 31], [2, 5, 7])) # Three 2-pairs
+print(win_percentage([1, 31], [14, 8, 27])) # 3-of-a-kind
+print(win_percentage([1, 2], [3, 17, 18])) # Straight
+print(win_percentage([1, 3], [5, 7, 9])) # Flush
+print(win_percentage([1, 4], [14, 17, 30])) # Full House
+print(win_percentage([1, 14], [27, 40, 9])) # 4-of-a-kind
+print(win_percentage([1, 2], [3, 4, 5])) # Straight-Flush
+'''
 
 # Sample Game
 p1 = Player(1, 1000)
