@@ -58,7 +58,8 @@ Creating an agent for a game needs to be a well thought-out procedure. ''Agent-b
 
 We can use chess as an example. In early development of intelligent agents, Chess was often used as a game to anaylze the performance of agents. Chess was a popular choice since the environment is known. Players cannot decieve each other since all the information is on the board. Since chess has a large amount of possible actions, early agents needed a effective search algorithm to find the best move. The agent must be able to simulate a numbers of possible moves ahead in order to react to the other player's actions. 
 
-Implementing agents for games with unknown environments presents a new challenge. Predicting which action to perform with insufficient information requires a more observant agent. 
+Implementing agents for games with unknown environments presents a new challenge. Predicting which action to perform with insufficient information requires a more observant agent. Poker is a good model to use when having a game with unknown data. ''...the Poker’s gamestate is hidden because each player can only see its cards or the community cards and,
+therefore, it’s much more difficult to analyze. Poker is also stochastic game i.e. it admits the element of chance.'' (Teófilo, 2
 
 \begin{table}
 \centering
@@ -115,15 +116,19 @@ The first step we took into coding our strategy was implementing a hand identifi
 %------------------------------------------------
 
 \section{Results}
-Discuss the result of your project -- what went right and what went wrong.  For the former, what would you do to make it even better? For the latter, what would you do differently?
 
-The results of the project was not impressive, as much of the game's information was not used appropriately. The agent lacked the core ability to identify and apply both known and unknown data. It's intelligence for creating a probability for which action to performed was horridly implemented, due to my (Samuel Eleftheri) lack of preparations. 
+The results of the project was not impressive, as much of the game's information was not used appropriately. The agent lacked the core ability to identify and apply data into its decision making algorithm. It's intelligence for which action to performed was horridly implemented, due to my (Samuel Eleftheri) lack of preparations. Things that I would have done differently would be to start working on other information into the agent's decision making ability. I became too focus on trying to implement Bayes Theorem for future card probability, that it wasted time. 
 
-The things that went right was establishing an environment to implement our agent's performance. No problems were detected with recognizing hand ranking, perform the set of actions given to the players, and implementing multiple players into a game. The Player and Table classes recorded the cards and chips data efficiently.
+The things that went right was establishing an environment to operate our agent's performance. No problems were detected with recognizing hand ranking, performing the set of available actions (CALL, FOLD, CHECK, RAISE), comparing players' hands, and bringing multiple players into the poker game. The Player's chips and cards were efficiently recorded and used without error. The Table class ran the poker game correctly, with the betting system and kicking of players implemented. \\ \\ \\ \\ \\
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
+
+{\Large {\textbf{BIBLIOGRAPHY}}} \\ \\
+Ian Millington, John Funge. \textit{Artificial Intelligence for \indent Games 2nd Edition.} CRC Press Taylor \& Francis \indent Group, 2009. Printed\\ 
+
+Luís Filipe Teófilo, Luís Paulo Reis, Henrique Lopes \indent Cardoso (2013). ''Estimating the Odds for Texas \indent Hold'em Poker Agents''. In: \textit{Intelligent Agent \indent Technologies (IAT)} Volume 02, pp. 369-374. \\ \indent URL: http://dl.acm.org/citation.cfm?id=2569335
 
 \printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
 
