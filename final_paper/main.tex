@@ -4,9 +4,18 @@
 
 \documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
 
+\usepackage{listings}
 \usepackage{kpfonts}
 \usepackage{color}
 \usepackage{indentfirst}
+
+\lstdefinestyle{mystyle}{
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=1
+}
 
 \newcommand*\Hs[1]{\ensuremath{{\color{blue} #1}{\color{red}\varheartsuit}}}
 \newcommand*\Ss[1]{\ensuremath{{\color{blue} #1}{\color{black}\spadesuit}}}
@@ -32,8 +41,6 @@
 % Example of a one line author/institution relationship
 %\author{\newauthor{Person ONe} \newinstitution{Where you're from}}
 
-\date{\today} % Add a date here if you would like one to appear underneath the title block, use \today for the current date, leave empty for no date
-
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -46,7 +53,7 @@
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\lettrineabstract{Our final project was to build a working Texas Hold'em Poker emulator, and an AI agent to play the game efficiently. Our approach was to accurately emulate poker as it is played professionally with realistic betting systems. We built an agent that can effectively determine the best move given its cards and river by evaluating the strength of its hand by comparing its relative strength to all other possibile hands. The agent is able to determine the probabilities of }
+\lettrineabstract{Our final project was to build a working Texas Hold'em Poker emulator, and an AI agent to play the game efficiently. Our approach was to accurately emulate poker as it is played professionally with realistic betting systems. We built an agent that can effectively determine the best move given its cards and river by evaluating the strength of its hand by comparing its relative strength to all other possibile hands. The agent is able to rationally make moves in a poker game and take steps to win, even against a human player.}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE CONTENTS
@@ -54,24 +61,24 @@
 
 \section{Introduction}
 
-Creating an agent for a game needs to be a well thought-out procedure. ''Agent-based AI is about producing autonomous characters that take in information from the game data, determine what actions to take based on the information, and carry out those actions.'' \citep{Reference1}. This reference can make the process seem simple, but can be (and will be) incrediably complex. Simpler games will contain a initial state, a set of possible actions, the repercussions of the actions, and the goal state. Understanding this information is crucial to creating an intelligent agent for a game. We must be prepared for any unknown information if we are dealing with an unknown environment. After dealing with the information, we need to recognize what best action would reach the goal the quickest. 
+Creating an agent for a game needs to be a well thought-out procedure. ''Agent-based AI is about producing autonomous characters that take in information from the game data, determine what actions to take based on the information, and carry out those actions.'' \citep{Reference1}. This reference can make the process seem simple, but can be (and will be) incredibly complex. Simpler games will contain a initial state, a set of possible actions, the repercussions of the actions, and the goal state. Understanding this information is crucial to creating an intelligent agent for a game. We must be prepared for any unknown information if we are dealing with an unknown environment. After dealing with the information, we need to recognize what best action would reach the goal the quickest.
 
-We can use chess as an example. In early development of intelligent agents, Chess was often used as a game to anaylze the performance of agents. Chess was a popular choice since the environment is known. Players cannot decieve each other since all the information is on the board. Since chess has a large amount of possible actions, early agents needed a effective search algorithm to find the best move. The agent must be able to simulate a numbers of possible moves ahead in order to react to the other player's actions. 
+We can use chess as an example. In early development of intelligent agents, Chess was often used as a game to anaylze the performance of agents. Chess was a popular choice since the environment is known. Players cannot decieve each other since all the information is on the board. Since chess has a large amount of possible actions, early agents needed a effective search algorithm to find the best move. The agent must be able to simulate a numbers of possible moves ahead in order to react to the other player's actions.
 
-Implementing agents for games with unknown environments presents a new challenge. Predicting which action to perform with insufficient information requires a more observant agent. 
-
-\begin{table}
-\centering
-\begin{tabular}{@{}ll@{}} \toprule
-\textsf{Pair} & \Hs{3},\Ds{A},\Ss{3},\Cs{4},\Hs{K}\\
-\bottomrule
-\end{tabular}
-\end{table}
+Implementing agents for games with unknown environments presents a new challenge. Predicting which action to perform with insufficient information requires a more observant agent. Poker is a good model to use when having a game with unknown data. ''...the Poker’s gamestate is hidden because each player can only see its cards or the community cards and,
+therefore, it’s much more difficult to analyze. Poker is also stochastic game i.e. it admits the element of chance.'' (Teófilo, 2)
+% \begin{table}
+% \centering
+% \begin{tabular}{@{}ll@{}} \toprule
+% \textsf{Pair} & \Hs{3},\Ds{A},\Ss{3},\Cs{4},\Hs{K}\\
+% \bottomrule
+% \end{tabular}
+% \end{table}
 %------------------------------------------------
 
 \section{Playing Texas Hold 'em as an AI Problem}
 
-Since Texas Hold'em has unknown information, it is important to develop a attentive agent that learns from previous rounds and a opponent's actions. An agent has to consider the significance of its information and understand how strong of a impact it can make. Some of our information includes: 
+Since Texas Hold'em has unknown information, it is important to develop an attentive agent that learns from previous rounds and opponent's actions. An agent has to consider the significance of its information and understand how strong of an impact it can make. Some of our information includes:
 
 \begin{enumerate}
 	\item Known Information:
@@ -90,43 +97,92 @@ Since Texas Hold'em has unknown information, it is important to develop a attent
 	\end{itemize}
 \end{enumerate}
 
-\indent With the known information of our player's cards and the current river cards, an agent can figure out how valuable our hand is. This is an essential procedure as it will greatly influence what action we execute. A higher value hand can result in the action of betting, when a lower value hand can result in folding if challenged by another character. Agents can then enhance the choice making algorithm by including unknown information. Agents can perform certain calculations to estimate the chances that certain cards can be drawn, or the probability of opponents having a certain card.
+\indent With the known information of our player's cards and the current river cards, an agent can figure out how valuable our hand is. This is an essential procedure as it will greatly influence what action we execute. A higher value hand can result in the action of betting, where as a lower value hand can result in folding, especially when challenged by another player. Agents can then enhance the choice making algorithm by including unknown information. Agents can perform certain calculations to estimate the chances that certain cards can be drawn, or the probability of opponents having a certain card.
 
-Other players' actions will greatly influence an agent's decision algorithm. Having an agent that can understand an opponent's actions can be the difference between winning or losing money.  
+Other players' actions will greatly influence an agent's decision algorithm. Having an agent that can understand an opponent's actions can be the difference between winning or losing money.
 %------------------------------------------------
 
 \section{Code}
+\paragraph{Classes}
+Our Texas Hold'em python file consists of two major classes: \textit{Table} and \textit{Player}. The Table class handles distributing cards to the players, keeping track of player actions, collecting bets/ante's from every player, and finally determining who wins a round of poker. The Player class represents a poker player and has two cards. Its methods are invoked by the Table class during poker rounds to determine what action a player would like to take based on its current hand. The Player class includes basic decision making to determine poker hands are strictly better than other hands.
 
-The first step we took into coding our strategy was implementing a hand identification system. We began by creating a list of numbers which would represent the deck, a list of suits, and a dictionary of hand rankings to sort which hand is better. We then built a method that would take any amount of cards and return the best hand ranking. The method included a number of data structures that sorted and counted pairs.
-\begin{table}
-	\caption{Example table}
-	\centering
-	\begin{tabular}{llr}
-		\toprule
-		\multicolumn{2}{c}{Name} \\
-		\cmidrule(r){1-2}
-		First Card & Second Card  & Probability \\
-		\midrule
-		\Hs{A} & \Cs{A} & $P(\Cs{A}|\Hs{A})\,P(\Hs{A})$ \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+\paragraph{Main Poker Loop}
+A majority of the code written for this project is dedicating to poker hand detection and the main poker game loop. The code was written in such a way to accurately represent poker rules as they are in the real world. Poker rounds are split up into open and closed pots. An initial round of betting goes around and each player is able to make a bet. This is called \textit{opening} the pot. If the pot was opened, then turns are taken again to raise the current bet or call the current bet. This continues until every player calls or folds. The poker game loop is written in the Table class, under the \textit{play} method. Below is a bit of pseudocode that outlines the main game loop, particularly the OPEN/ClOSED pot.
+
+\lstset{style=mystyle}
+\begin{lstlisting}[language=Python]{style=mystyle}
+while river cards <= 5:
+	# Open the pot
+	bet = infinity
+	for player in players:
+		action = Player.act()
+		if action == BET:
+			biggest_bet = min(bet, action.amount)
+		elif action == FOLD:
+			remove(player)
+	# Close the pot
+	if bet != infinity:
+		while not all players fold or call:
+			raise = infinity
+			for player in players:
+				action = Player.act()
+				if action == RAISE:
+					raise = min(raise, action.amount)
+				elif action == FOLD:
+					remove(player)
+			bet = raise
+\end{lstlisting}
+
+\paragraph{Card Represenations and Determining Poker Hands}
+Cards are represented as the integers $0-51$. A card value can be calculated by taking the card ID and modding by 13. Similarly, the suite of a card can be found by dividing by 13. Determining poker hands was relatively straight forward. I wrote a function called \textit{poker\_hands(cards)} that accepts a list of card integer values. I constructed a frequency count of the four suites and the 13 different possible face values by calculating the face and suite values for each input card. From there, the frequency of a face values corresponds directly to a $N$-of-a-kind, where $N$ is a 2, 3, or 4. Similarly, if any suite count was greater than 4, then the cards formed a flush. In order to determine a straight, I iterated through the frequency table of face counts 5 cards at a time. A snippet of the code to generate frequency tables is below.
+
+\begin{lstlisting}[language=Python]{style=mystyle}
+face_count = [[] for x in range(0, 13)]
+suite_count = [[] for x in range(0, 4)]
+for c in cards:
+		value, suite = (c % 13), (c // 13)
+		face_count[value].append(c)
+		suite_count[suite].append(c)
+\end{lstlisting}
+
+\paragraph{Ranking Poker Hands and the Best Hand}
+Once I determined what poker hands were held given a list of cards, I was able to iterate through all of the possible poker hands and determing the \textit{best} poker hand. I was able to do this because the different tiers of poker hands are strictly better or worse than another. So, a two-of-a-kind is always worse than a three-of-a-kind. If two poker hands were of the same tier, then simply summing the face values of all the cards that make up that hand can serve as a secondary ranking system to determine a better poker hand when they are the same tier. This took a list of poker hands and converted them into tuples of first and secondary rankings. After sorting, the best hand can be taken from the front of a sorted list.
+
+\paragraph{Player Actions}
+The Player serves as an AI agent. Its \textit{act} method is used to return an action, which is one of FOLD, BET, RAISE, CALL, or CHECK. Proper actions are determined by a boolean value called OPEN passed to the act method. This lets the agent know whether or not the pot is open or closed and if raising or betting is appropriate. The player's act method then identifies its best hand so far with its privately held hands and the public river cards. If the best hand held by the player is better than some threshold, like a high card less than 7, then the player will not fold. Moreover, if the best hand held by the player is better than some percentile ranking of all hands, the player will bet chips.
+
+
+% \begin{table}
+% 	\caption{Example table}
+% 	\centering
+% 	\begin{tabular}{llr}
+% 		\toprule
+% 		\multicolumn{2}{c}{Name} \\
+% 		\cmidrule(r){1-2}
+% 		First Card & Second Card  & Probability \\
+% 		\midrule
+% 		\Hs{A} & \Cs{A} & $P(\Cs{A}|\Hs{A})\,P(\Hs{A})$ \\
+% 		\bottomrule
+% 	\end{tabular}
+% \end{table}
 
 %------------------------------------------------
 
 \section{Results}
-Discuss the result of your project -- what went right and what went wrong.  For the former, what would you do to make it even better? For the latter, what would you do differently?
 
-The results of the project was not impressive, as much of the game's information was not used appropriately. The agent lacked the core ability to identify and apply both known and unknown data. It's intelligence for creating a probability for which action to performed was horridly implemented, due to my (Samuel Eleftheri) lack of preparations. 
+The results of the project was not impressive, as much of the game's information was not used appropriately. The agent lacked the core ability to identify and apply data into its decision making algorithm. It's intelligence for which action to performed was horridly implemented, due to my (Samuel Eleftheri) lack of preparations. Things that I would have done differently would be to start working on other information into the agent's decision making ability. I became too focus on trying to implement Bayes Theorem for future card probability, that it wasted time.
 
-The things that went right was establishing an environment to implement our agent's performance. No problems were detected with recognizing hand ranking, perform the set of actions given to the players, and implementing multiple players into a game. The Player and Table classes recorded the cards and chips data efficiently.
+The things that went right was establishing an environment to operate our agent's performance. No problems were detected with recognizing hand ranking, performing the set of available actions (CALL, FOLD, CHECK, RAISE), comparing players' hands, and bringing multiple players into the poker game. The Player's chips and cards were efficiently recorded and used without error. The Table class ran the poker game correctly, with the betting system and kicking of players implemented. \\ \\ \\ \\ \\
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+{\Large {\textbf{BIBLIOGRAPHY}}} \\ \\
+Ian Millington, John Funge. \textit{Artificial Intelligence for \indent Games 2nd Edition.} CRC Press Taylor \& Francis \indent Group, 2009. Printed\\
 
+Luís Filipe Teófilo, Luís Paulo Reis, Henrique Lopes \indent Cardoso (2013). ''Estimating the Odds for Texas \indent Hold'em Poker Agents''. In: \textit{Intelligent Agent \indent Technologies (IAT)} Volume 02, pp. 369-374. \\ \indent URL: http://dl.acm.org/citation.cfm?id=2569335
 
 %----------------------------------------------------------------------------------------
 

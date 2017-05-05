@@ -1,0 +1,138 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt, a4paper, twocolumn]{article} % 10pt font size (11 and 12 also possible), A4 paper (letterpaper for US letter) and two column layout (remove for one column)
+
+\usepackage{kpfonts}
+\usepackage{color}
+\usepackage{indentfirst}
+
+\newcommand*\Hs[1]{\ensuremath{{\color{blue} #1}{\color{red}\varheartsuit}}}
+\newcommand*\Ss[1]{\ensuremath{{\color{blue} #1}{\color{black}\spadesuit}}}
+\newcommand*\Ds[1]{\ensuremath{{\color{blue} #1}{\color{red}\vardiamondsuit}}}
+\newcommand*\Cs[1]{\ensuremath{{\color{blue} #1}{\color{black}\clubsuit}}}
+\newcommand*\NT[1]{{\color{blue} #1}{\color{black}\textsc{nt}}}
+
+
+\input{structure.tex} % Specifies the document structure and loads requires packages
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{B351 AI Project: Texas Hold 'em} % The article title
+
+\author{
+	\authorstyle{Steven Myers and Samuel Eleftheri} % Authors
+	\newline\newline % Space before institutions
+	\institution{Indiana University, Bloomington, IN, USA} % Institution 3
+}
+
+% Example of a one line author/institution relationship
+%\author{\newauthor{Person ONe} \newinstitution{Where you're from}}
+
+\date{\today} % Add a date here if you would like one to appear underneath the title block, use \today for the current date, leave empty for no date
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\maketitle % Print the title
+
+\thispagestyle{firstpage} % Apply the page style for the first page (no headers and footers)
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\lettrineabstract{Our final project was to build a working Texas Hold'em Poker emulator, and an AI agent to play the game efficiently. Our approach was to accurately emulate poker as it is played professionally with realistic betting systems. We built an agent that can effectively determine the best move given its cards and river by evaluating the strength of its hand by comparing its relative strength to all other possibile hands. The agent is able to determine the probabilities of }
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+Creating an agent for a game needs to be a well thought-out procedure. ''Agent-based AI is about producing autonomous characters that take in information from the game data, determine what actions to take based on the information, and carry out those actions.'' \citep{Reference1}. This reference can make the process seem simple, but can be (and will be) incrediably complex. Simpler games will contain a initial state, a set of possible actions, the repercussions of the actions, and the goal state. Understanding this information is crucial to creating an intelligent agent for a game. We must be prepared for any unknown information if we are dealing with an unknown environment. After dealing with the information, we need to recognize what best action would reach the goal the quickest. 
+
+We can use chess as an example. In early development of intelligent agents, Chess was often used as a game to anaylze the performance of agents. Chess was a popular choice since the environment is known. Players cannot decieve each other since all the information is on the board. Since chess has a large amount of possible actions, early agents needed a effective search algorithm to find the best move. The agent must be able to simulate a numbers of possible moves ahead in order to react to the other player's actions. 
+
+Implementing agents for games with unknown environments presents a new challenge. Predicting which action to perform with insufficient information requires a more observant agent. Poker is a good model to use when having a game with unknown data. ''...the Poker’s gamestate is hidden because each player can only see its cards or the community cards and,
+therefore, it’s much more difficult to analyze. Poker is also stochastic game i.e. it admits the element of chance.'' (Teófilo, 2
+
+\begin{table}
+\centering
+\begin{tabular}{@{}ll@{}} \toprule
+\textsf{Pair} & \Hs{3},\Ds{A},\Ss{3},\Cs{4},\Hs{K}\\
+\bottomrule
+\end{tabular}
+\end{table}
+%------------------------------------------------
+
+\section{Playing Texas Hold 'em as an AI Problem}
+
+Since Texas Hold'em has unknown information, it is important to develop a attentive agent that learns from previous rounds and a opponent's actions. An agent has to consider the significance of its information and understand how strong of a impact it can make. Some of our information includes: 
+
+\begin{enumerate}
+	\item Known Information:
+	\begin{itemize}
+		\item Player's Cards
+		\item Current River Cards
+		\item Deck
+		\item Pot Size
+		\item Opponent's Money
+	\end{itemize}
+	\item Unknown Information:
+	\begin{itemize}
+		\item Opponent's Cards
+		\item Future River Cards
+		\item Bluffing Probability
+	\end{itemize}
+\end{enumerate}
+
+\indent With the known information of our player's cards and the current river cards, an agent can figure out how valuable our hand is. This is an essential procedure as it will greatly influence what action we execute. A higher value hand can result in the action of betting, when a lower value hand can result in folding if challenged by another character. Agents can then enhance the choice making algorithm by including unknown information. Agents can perform certain calculations to estimate the chances that certain cards can be drawn, or the probability of opponents having a certain card.
+
+Other players' actions will greatly influence an agent's decision algorithm. Having an agent that can understand an opponent's actions can be the difference between winning or losing money.  
+%------------------------------------------------
+
+\section{Code}
+
+The first step we took into coding our strategy was implementing a hand identification system. We began by creating a list of numbers which would represent the deck, a list of suits, and a dictionary of hand rankings to sort which hand is better. We then built a method that would take any amount of cards and return the best hand ranking. The method included a number of data structures that sorted and counted pairs.
+\begin{table}
+	\caption{Example table}
+	\centering
+	\begin{tabular}{llr}
+		\toprule
+		\multicolumn{2}{c}{Name} \\
+		\cmidrule(r){1-2}
+		First Card & Second Card  & Probability \\
+		\midrule
+		\Hs{A} & \Cs{A} & $P(\Cs{A}|\Hs{A})\,P(\Hs{A})$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+%------------------------------------------------
+
+\section{Results}
+
+The results of the project was not impressive, as much of the game's information was not used appropriately. The agent lacked the core ability to identify and apply data into its decision making algorithm. It's intelligence for which action to performed was horridly implemented, due to my (Samuel Eleftheri) lack of preparations. Things that I would have done differently would be to start working on other information into the agent's decision making ability. I became too focus on trying to implement Bayes Theorem for future card probability, that it wasted time. 
+
+The things that went right was establishing an environment to operate our agent's performance. No problems were detected with recognizing hand ranking, performing the set of available actions (CALL, FOLD, CHECK, RAISE), comparing players' hands, and bringing multiple players into the poker game. The Player's chips and cards were efficiently recorded and used without error. The Table class ran the poker game correctly, with the betting system and kicking of players implemented. \\ \\ \\ \\ \\
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+{\Large {\textbf{BIBLIOGRAPHY}}} \\ \\
+Ian Millington, John Funge. \textit{Artificial Intelligence for \indent Games 2nd Edition.} CRC Press Taylor \& Francis \indent Group, 2009. Printed\\ 
+
+Luís Filipe Teófilo, Luís Paulo Reis, Henrique Lopes \indent Cardoso (2013). ''Estimating the Odds for Texas \indent Hold'em Poker Agents''. In: \textit{Intelligent Agent \indent Technologies (IAT)} Volume 02, pp. 369-374. \\ \indent URL: http://dl.acm.org/citation.cfm?id=2569335
+
+\printbibliography[title={Bibliography}] % Print the bibliography, section title in curly brackets
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
