@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1494015938 "main.aux" "main.bbl" "main" 1494016000
+["bibtex main"] 1494015938 "main.aux" "main.bbl" "main" 1494016531
   "C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/bibtex/bst/biblatex/biblatex.bst" 1480978286 63002 075c3f13314e99e71e6ff0a472a98980 ""
   "example.bib" 1494011335 858 f25d08eed90c4358c5637c7f12dc8bd7 ""
-  "main-blx.bib" 1494015999 317 0fc75919cade1662d869cae8416eb2b0 ""
-  "main.aux" 1494015999 2324 9eb1ce1ef033820ae35037968d6b116b ""
+  "main-blx.bib" 1494016530 317 0fc75919cade1662d869cae8416eb2b0 ""
+  "main.aux" 1494016530 2324 9eb1ce1ef033820ae35037968d6b116b ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1494015997 "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.tex" "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.pdf" "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main" 1494016000
+["pdflatex"] 1494016528 "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.tex" "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.pdf" "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main" 1494016531
   "C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc" 1458473887 4993 1194fb36dfcb11d9ae9802f2b00b60a3 ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1136790254 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
   "C:/Program Files/MiKTeX 2.9/fonts/tfm/adobe/helvetic/phvb8r.tfm" 1136790254 4484 b828043cbd581d289d955903c1339981 ""
@@ -170,18 +170,18 @@
   "C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/tex/latex/xcolor/svgnam.def" 1463135581 4806 64506e6d32c16ae8c7643ff9afd04218 ""
   "C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/tex/latex/xcolor/xcolor.sty" 1463135581 57049 74963e80d77be39a0b7442967b27c75b ""
   "C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/tex/latex/xstring/xstring.sty" 1381656702 144 0ca8d67b000b795a4d9ec000e0fd09c7 ""
-  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.aux" 1494015999 2324 9eb1ce1ef033820ae35037968d6b116b ""
-  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.tex" 1494015996 13487 4f87e20b158cbc9b94a0a5c6566c723d ""
-  "main.aux" 1494015999 2324 9eb1ce1ef033820ae35037968d6b116b ""
+  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.aux" 1494016530 2324 9eb1ce1ef033820ae35037968d6b116b ""
+  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.tex" 1494016528 13482 97d30df5873ceaa82906d31479b5f090 ""
+  "main.aux" 1494016530 2324 9eb1ce1ef033820ae35037968d6b116b ""
   "main.bbl" 1494015938 2316 f53f526edac1097f32b24688c5e19943 "bibtex main"
-  "main.run.xml" 1494015999 2652 8031b4829ee5d74678a41a51861df480 ""
-  "main.tex" 1494015996 13487 4f87e20b158cbc9b94a0a5c6566c723d ""
+  "main.run.xml" 1494016530 2652 8031b4829ee5d74678a41a51861df480 ""
+  "main.tex" 1494016528 13482 97d30df5873ceaa82906d31479b5f090 ""
   "structure.tex" 1493845478 6343 ebd4ab96cb08cada8d2242aea06e415d ""
   (generated)
-  "main.aux"
+  "main.log"
+  "main.run.xml"
+  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.pdf"
   "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.log"
+  "main.aux"
   "main-blx.bib"
   "main.pdf"
-  "main.log"
-  "C:\Users\Larken\Documents\Github\texasholdem\final_paper\main.pdf"
-  "main.run.xml"

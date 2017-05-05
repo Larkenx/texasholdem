@@ -5,14 +5,8 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.pdf" afterPath="$PROJECT_DIR$/final_paper/main.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.synctex.gz" afterPath="$PROJECT_DIR$/final_paper/main.synctex.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/example.bib" afterPath="$PROJECT_DIR$/final_paper/example.bib" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.aux" afterPath="$PROJECT_DIR$/final_paper/main.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.bbl" afterPath="$PROJECT_DIR$/final_paper/main.bbl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.blg" afterPath="$PROJECT_DIR$/final_paper/main.blg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.fdb_latexmk" afterPath="$PROJECT_DIR$/final_paper/main.fdb_latexmk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.fls" afterPath="$PROJECT_DIR$/final_paper/main.fls" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.log" afterPath="$PROJECT_DIR$/final_paper/main.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.run.xml" afterPath="$PROJECT_DIR$/final_paper/main.run.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/final_paper/main.tex" afterPath="$PROJECT_DIR$/final_paper/main.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/th.py" afterPath="$PROJECT_DIR$/th.py" />
     </list>
@@ -24,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/texasholdem$th.coverage" NAME="th Coverage Results" MODIFIED="1494015689394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/texasholdem$th.coverage" NAME="th Coverage Results" MODIFIED="1494016420203" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -44,8 +38,8 @@
       <file leaf-file-name="th.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/th.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10059">
-              <caret line="681" column="0" lean-forward="true" selection-start-line="681" selection-start-column="0" selection-end-line="681" selection-end-column="0" />
+            <state relative-caret-position="466">
+              <caret line="416" column="7" lean-forward="true" selection-start-line="416" selection-start-column="7" selection-end-line="416" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="false" />
                 <element signature="e#268#438#0" expanded="false" />
@@ -1012,8 +1006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/th.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10059">
-          <caret line="681" column="0" lean-forward="true" selection-start-line="681" selection-start-column="0" selection-end-line="681" selection-end-column="0" />
+        <state relative-caret-position="466">
+          <caret line="416" column="7" lean-forward="true" selection-start-line="416" selection-start-column="7" selection-end-line="416" selection-end-column="7" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
             <element signature="e#268#438#0" expanded="false" />

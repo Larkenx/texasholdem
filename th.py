@@ -399,8 +399,8 @@ class Player:
         best_hand = self.best_hand(river)[1]
         if OPEN:
             '''Available actions are RAISE, CALL, and FOLD'''
-            if current_bet <= 15:
-                return self.id, ["RAISE", 20]
+            if current_bet <= 20:
+                return self.id, ["RAISE", 25]
             else:
                 return self.id, ["CALL"]
         else:
@@ -568,7 +568,7 @@ class Table:
                     for p in self.players:
                         # TODO: Fix up some of the problems that occur when all players fold
                         if len(self.players) == 1: # All but one players folded
-                            print("Player" + int(p.id) + "wins!")
+                            print("Player" + str(p.id) + "wins!")
                             return p.id
 
                         p_move = p.act(OPEN, self.pot, max_bet, player_bet[1], self.river, self.round_history)
@@ -578,7 +578,7 @@ class Table:
                                 print("Player {0} made an invalid bet! Kicking from table".format(p.id))
                                 folded_players.append(p)
                             else: # Otherwise, record the bet if it's the minimum bet so far
-                                player_raise = (p.id, p_action[1]) if player_raise[0] == None or p_action[1] < player_raise[2] else player_raise
+                                player_raise = (p.id, p_action[1]) if player_raise[0] == None or p_action[1] < player_raise[1] else player_raise
                         elif p_action[0] == "FOLD":
                             folded_players.append(p)
                         elif p_action[0] == "CALL":
