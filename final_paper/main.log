@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6300 64-bit) (preloaded format=pdflatex 2017.5.3)  3 MAY 2017 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.12)  5 MAY 2017 15:00
 entering extended mode
-**C:/Users/Larken/Documents/Github/texasholdem/final_paper/main.tex
-(C:/Users/Larken/Documents/Github/texasholdem/final_paper/main.tex
-LaTeX2e <2017-04-15>
+**./main.tex
+(main.tex
+LaTeX2e <2016/03/31> patch level 3
 Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -21,11 +21,11 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\kpfonts.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\kpfonts.sty"
 Package: kpfonts  2010/08/20 v3.31
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
-Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
+Package: textcomp 2016/06/19 v1.99m Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
 (textcomp)               4 = 5 + \texteuro
@@ -108,7 +108,7 @@ Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2016/11/05 v2.16a AMS math features
+Package: amsmath 2016/06/28 v2.15d AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
@@ -128,20 +128,20 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count87
-LaTeX Info: Redefining \frac on input line 213.
+LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count88
 \leftroot@=\count89
-LaTeX Info: Redefining \overline on input line 375.
+LaTeX Info: Redefining \overline on input line 297.
 \classnum@=\count90
 \DOTSCASE@=\count91
-LaTeX Info: Redefining \ldots on input line 472.
-LaTeX Info: Redefining \dots on input line 475.
-LaTeX Info: Redefining \cdots on input line 596.
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen105
-LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count92
 \c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
@@ -162,8 +162,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2817.
-LaTeX Info: Redefining \] on input line 2818.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
 \c@mv@rm=\count99
 \c@mv@boldrm=\count100
@@ -442,7 +442,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 147.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+File: pdftex.def 2016/07/10 v0.06j Graphics/color for pdfTeX
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
@@ -452,18 +452,21 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count103
 ))
-(structure.tex ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+) (structure.tex
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2016/04/23 3.9r The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
-Language: english 2017/01/24 v3.3q English support from the babel system
+Language: english 2012/08/20 v3.3p English support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2016/04/23 3.9r Babel common definitions
@@ -474,7 +477,7 @@ File: babel.def 2016/04/23 3.9r Babel common definitions
 \l@australian = a dialect from \language\l@british 
 \l@newzealand = a dialect from \language\l@british 
 ))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.sty"
 Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
@@ -488,8 +491,7 @@ LaTeX Info: Redefining \textls on input line 774.
 LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
 \MT@listname@count=\count106
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype-pdfte
-x.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype-pdftex.def"
 File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 916.
@@ -498,9 +500,10 @@ LaTeX Info: Redefining \lslig on input line 916.
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\microtype.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\microtype.cfg"
 File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
-)) ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 59.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
@@ -547,7 +550,7 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headsep=\skip49
 \dth@everypar=\toks26
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
@@ -565,13 +568,13 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\svgnam.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\svgnam.def"
 File: svgnam.def 2016/05/11 v2.12 Predefined colors according to SVG 1.1 (UK)
 ))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen114
@@ -584,7 +587,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 )
 \c@ContinuedFloat=\count107
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen121
 \lightrulewidth=\dimen122
@@ -604,14 +607,14 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count111
 \@thisrulewidth=\dimen133
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\lastpage\lastpage.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\lastpage\lastpage.sty"
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/07/10 v1.0t Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -624,7 +627,7 @@ Package graphics Info: Driver file: pdftex.def on input line 99.
 \Gin@req@height=\dimen134
 \Gin@req@width=\dimen135
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\enumitem\enumitem.sty"
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip50
 \enit@outerparindent=\dimen136
@@ -632,7 +635,7 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box28
 \enitdp@description=\count112
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\sectsty\sectsty.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
@@ -640,7 +643,7 @@ les
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
@@ -664,10 +667,10 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
@@ -676,14 +679,14 @@ Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@posthook=\toks30
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
-File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -895,8 +898,6 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+0219 (decimal 537)
    defining Unicode char U+021A (decimal 538)
    defining Unicode char U+021B (decimal 539)
-   defining Unicode char U+0232 (decimal 562)
-   defining Unicode char U+0233 (decimal 563)
    defining Unicode char U+1E02 (decimal 7682)
    defining Unicode char U+1E03 (decimal 7683)
    defining Unicode char U+200C (decimal 8204)
@@ -917,14 +918,12 @@ File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2039 (decimal 8249)
    defining Unicode char U+203A (decimal 8250)
    defining Unicode char U+2423 (decimal 9251)
-   defining Unicode char U+1E20 (decimal 7712)
-   defining Unicode char U+1E21 (decimal 7713)
 )
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
-File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -965,7 +964,7 @@ Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
-File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -981,7 +980,7 @@ Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.dfu"
-File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+File: ts1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00A4 (decimal 164)
@@ -1063,20 +1062,20 @@ File: ts1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\xcharter\XCharter.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcharter\XCharter.sty"
 Package: XCharter 2017/03/11 v1.08
 
 `XCharter' v1.08, 2017/03/11 Text macros for XCharter, an extension of Charter 
 (msharpe) ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+Package: fontenc 2016/06/19 v1.99m Standard LaTeX package
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\ly1\ly1enc.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\ly1\ly1enc.def"
 File: ly1enc.def 2009/07/22 v0.7 TeX 'n ANSI encoding (DPC/KB)
 Now handling font encoding LY1 ...
 ... processing UTF-8 mapping file for font encoding LY1
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ly1enc.dfu"
-File: ly1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+File: ly1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A2 (decimal 162)
@@ -1196,7 +1195,7 @@ File: ly1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
    defining Unicode char U+2122 (decimal 8482)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2017/04/05 v2.0i Standard LaTeX file
+File: t1enc.def 2016/06/19 v1.99m Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 )
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 105.
@@ -1204,7 +1203,7 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 105.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 ))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\mweights\mweights.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\mweights\mweights.sty"
 Package: mweights 2017/03/30 (Bob Tennent) Support package for multiple-weight 
 font packages. 
 LaTeX Info: Redefining \bfseries on input line 22.
@@ -1213,11 +1212,11 @@ LaTeX Info: Redefining \rmfamily on input line 38.
 LaTeX Info: Redefining \sffamily on input line 66.
 LaTeX Info: Redefining \ttfamily on input line 94.
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\etoolbox\etoolbox.sty"
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count116
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\fontaxes\fontaxes.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\fontaxes\fontaxes.sty"
 Package: fontaxes 2014/03/23 v1.0d Font selection axes
 LaTeX Info: Redefining \upshape on input line 29.
 LaTeX Info: Redefining \itshape on input line 31.
@@ -1235,7 +1234,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@depth=\count117
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 )))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \fancy@headwidth=\skip51
 \f@ncyO@elh=\skip52
@@ -1247,13 +1246,13 @@ Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
 \f@ncyO@olf=\skip58
 \f@ncyO@orf=\skip59
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\titling\titling.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\titling\titling.sty"
 Package: titling 2009/09/04 v2.1d maketitle typesetting
 \thanksmarkwidth=\skip60
 \thanksmargin=\skip61
 \droptitle=\skip62
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\lettrine\lettrine.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\lettrine\lettrine.sty"
 File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
 \c@DefaultLines=\count118
 \c@DefaultDepth=\count119
@@ -1279,7 +1278,7 @@ File: lettrine.sty 2015/08/31 v1.9 (Daniel Flipo)
 \LettrineDepth=\dimen160
 
 Loading lettrine.cfg
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\lettrine\lettrine.cfg))
+("C:\Program Files\MiKTeX 2.9\tex\latex\lettrine\lettrine.cfg"))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\fix-cm.sty"
 Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 
@@ -1287,19 +1286,19 @@ Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
 ))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\xstring\xstring.sty
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\generic\xstring\xstring.tex
+("C:\Program Files\MiKTeX 2.9\tex\latex\xstring\xstring.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xstring\xstring.tex"
 \@xs@message=\write3
 \integerpart=\count122
 \decimalpart=\count123
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\biblatex.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.sty"
 Package: biblatex 2016/12/05 v3.7 programmable bibliographies (PK/JW/AB)
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
 )
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
@@ -1324,17 +1323,17 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\logreq\logreq.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\logreq\logreq.sty"
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count124
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\logreq\logreq.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\logreq\logreq.def"
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
@@ -1392,7 +1391,7 @@ Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\blx-dm.def)
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-dm.def")
 Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'authoryear.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -1472,13 +1471,13 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\blx-compat.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-compat.def"
 File: blx-compat.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load BibTeX backend compatibility...
 Package biblatex Info: ... file 'blx-bibtex.def' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\blx-bibtex.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-bibtex.def"
 File: blx-bibtex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 
 
@@ -1488,7 +1487,7 @@ Package biblatex Warning: Using fall-back BibTeX(8) backend:
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\biblatex.def
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.def"
 File: biblatex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 \c@textcitecount=\count298
 \c@textcitetotal=\count299
@@ -1501,19 +1500,18 @@ File: biblatex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\blx-natbib.def
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\blx-natbib.def"
 File: blx-natbib.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
 )
 Package biblatex Info: Trying to load bibliography style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.bbx' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\bbx\authoryear.b
-bx
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\authoryear.bbx"
 File: authoryear.bbx 2016/12/05 v3.7 biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\bbx\standard.bbx
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\bbx\standard.bbx"
 File: standard.bbx 2016/12/05 v3.7 biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count305
 \c@bbx:relatedtotal=\count306
@@ -1521,8 +1519,7 @@ File: standard.bbx 2016/12/05 v3.7 biblatex bibliography style (PK/JW/AB)
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\cbx\authoryear.c
-bx
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\cbx\authoryear.cbx"
 File: authoryear.cbx 2016/12/05 v3.7 biblatex citation style (PK/JW/AB)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -1534,9 +1531,11 @@ Package biblatex Info: Redefining '\textcites'.
 )
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
- (C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\biblatex.cfg
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\biblatex.cfg"
 File: biblatex.cfg 
-))) (C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.sty
+)))
+("C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.sty"
 Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
 \csq@reset=\count307
 \csq@gtype=\count308
@@ -1545,82 +1544,82 @@ Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
 \csq@maxlvl=\count311
 \csq@tshold=\count312
 \csq@ltx@everypar=\toks33
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.def
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.def"
 File: csquotes.def 2017/03/11 v5.2b csquotes generic definitions (JAW)
 )
 Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\csquotes\csquotes.cfg"
 File: csquotes.cfg 
 )
 Package csquotes Info: Enabling multilingual quotes.
 )
 LaTeX Font Info:    Try loading font information for T1+XCharter-TLF on input l
-ine 38.
+ine 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\xcharter\t1xcharter-tlf.f
-d
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcharter\t1xcharter-tlf.fd"
 File: T1XCharter-TLF.fd 2013/10/27 (autoinst) Font definitions for T1/XCharter-
 TLF.
 )
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 38.
+(Font)              scaled to size 10.0pt on input line 39.
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\biblatex\lbx\english.lbx
+("C:\Program Files\MiKTeX 2.9\tex\latex\biblatex\lbx\english.lbx"
 File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
-(main.aux)
+ (main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 38.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 38.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 39.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\omljkp.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\omljkp.fd"
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 38.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\omsjkp.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\omsjkp.fd"
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 38.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\omxjkp.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\omxjkp.fd"
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 38.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 39.
 
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\ujkpexa.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\ujkpexa.fd"
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 38.
-LaTeX Font Info:    Try loading font information for LY1+ptm on input line 38.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 39.
+LaTeX Font Info:    Try loading font information for LY1+ptm on input line 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\ly1\ly1ptm.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\ly1\ly1ptm.fd"
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    ... okay on input line 39.
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count313
 \scratchdimen=\dimen161
@@ -1649,7 +1648,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \microtypecontext on input line 38.
+LaTeX Info: Redefining \microtypecontext on input line 39.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1667,7 +1666,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 38.
+(lastpage)             ! on input line 39.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1716,9 +1715,9 @@ Package biblatex Info: Data encoding 'utf8' specified.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
 (main.bbl)
-Package biblatex Info: Reference section=0 on input line 38.
-Package biblatex Info: Reference segment=0 on input line 38.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 40.
+Package biblatex Info: Reference section=0 on input line 39.
+Package biblatex Info: Reference segment=0 on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 41.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
@@ -1727,106 +1726,112 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 40.
+(Font)              scaled to size 12.0pt on input line 41.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 40.
+(Font)              scaled to size 8.0pt on input line 41.
 
-Underfull \hbox (badness 10000) in paragraph at lines 40--40
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 
  []
 
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 48.
+(Font)              scaled to size 10.0pt on input line 49.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/XCharter-TLF/m/sc/10'.
 (microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 28.93999pt on input line 48.
+(Font)              scaled to size 28.93999pt on input line 49.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 42.56212pt on input line 48.
+(Font)              scaled to size 42.56212pt on input line 49.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 48.
+(Font)              scaled to size 10.0pt on input line 49.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 54.
+(Font)              scaled to size 14.4pt on input line 55.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 54.
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 59.
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\ot1jkp.fd
+(Font)              scaled to size 14.4pt on input line 55.
+
+LaTeX Warning: Citation 'Reference1' on page 1 undefined on input line 57.
+
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 65.
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\ot1jkp.fd"
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `jkp' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 59.
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 65.
 
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\ujkpmia.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\ujkpmia.fd"
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\mt-msa.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 59.
+LaTeX Font Info:    Try loading font information for U+msb on input line 65.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\microtype\mt-msb.cfg
+("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 59.
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 65.
 
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\ujkpsyc.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\ujkpsyc.fd"
 File: ujkpsyc.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for T1+jkpss on input line 60.
+LaTeX Font Info:    Try loading font information for T1+jkpss on input line 66.
 
 
-(C:\Users\Larken\AppData\Roaming\MiKTeX\2.9\tex\latex\kpfonts\t1jkpss.fd
+("C:\Program Files\MiKTeX 2.9\tex\latex\kpfonts\t1jkpss.fd"
 File: t1jkpss.fd 2007/07/16 Fontinst v1.928 font definitions for T1/jkpss.
 )
 Package microtype Info: Loading generic settings for font family
 (microtype)             `jkpss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
+LaTeX Font Info:    Try loading font information for TS1+XCharter-TLF on input 
+line 79.
 
-
-LaTeX Warning: Citation 'Reference1' on page 1 undefined on input line 65.
-
-
-LaTeX Warning: Citation 'Reference2' on page 1 undefined on input line 65.
-
-
-LaTeX Warning: Citation 'Reference3' on page 1 undefined on input line 65.
-
-
-LaTeX Warning: Citation 'Reference1' on page 1 undefined on input line 65.
-
-
-LaTeX Warning: Reference `bear' on page 1 undefined on input line 65.
-
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 10.0pt on input line 75.
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 77.
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
-(Font)              scaled to size 9.0pt on input line 77.
-LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
-(Font)              scaled to size 9.0pt on input line 77.
-
-AED: lastpage setting LastPage
-[1{C:/Users/Larken/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcharter\ts1xcharter-tlf.fd"
+File: TS1XCharter-TLF.fd 2013/10/27 (autoinst) Font definitions for TS1/XCharte
+r-TLF.
+)
+LaTeX Font Info:    Font shape `TS1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 10.0pt on input line 79.
+Package microtype Info: Loading generic settings for font family
+(microtype)             `XCharter-TLF' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
-(main.aux)
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 9.0pt on input line 102.
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/b/n' will be
+(Font)              scaled to size 9.0pt on input line 102.
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 102.
+
+
+LaTeX Warning: Empty bibliography on input line 128.
+
+
+AED: lastpage setting LastPage
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
+(Font)              scaled to size 10.0pt on input line 133.
+[2
+
+] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1840,29 +1845,28 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 16956 strings out of 493328
- 277021 string characters out of 3139122
- 725039 words of memory out of 3000000
- 20096 multiletter control sequences out of 15000+200000
- 112283 words of font info for 110 fonts, out of 3000000 for 9000
+ 17041 strings out of 493333
+ 277173 string characters out of 3139159
+ 726790 words of memory out of 3000000
+ 20116 multiletter control sequences out of 15000+200000
+ 118456 words of font info for 147 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,11n,77p,940b,1469s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/xcharter/xch_tuu2
-ww.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Users/Larke
-n/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/
-Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/xcharter/XCharter-It
-alic.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/xcharte
-r/XCharter-Roman.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
-blic/kpfonts/jkpmi.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/type1/
-public/kpfonts/jkpmn8a.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fonts/ty
-pe1/public/kpfonts/jkpssmn8a.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/fo
-nts/type1/public/kpfonts/jkpsy.pfb><C:/Users/Larken/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/kpfonts/jkpsyc.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/helvetic/u
-hvro8a.pfb>
-Output written on main.pdf (1 page, 104947 bytes).
+ 38i,12n,77p,885b,1469s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/xcharter/xch_tuu2ww.enc}{C:/Prog
+ram Files/MiKTeX 2.9/fonts/enc/dvips/xcharter/xch_jfcsri.enc}{C:/Program Files/
+MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1
+/public/xcharter/XCharter-Bold.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/xcharter/XCharter-Italic.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
+c/xcharter/XCharter-Roman.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/k
+pfonts/jkpmi.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpmn8
+a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpssmn8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpsy.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/kpfonts/jkpsyc.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/helvetic/uhvro8a.pfb>
+Output written on main.pdf (2 pages, 113942 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 54 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 35329 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 37889 words of extra memory for PDF output out of 42996 (max. 10000000)
 
