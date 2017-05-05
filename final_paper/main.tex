@@ -53,7 +53,10 @@
 
 \section{Introduction}
 
-Here are some cards:
+To creating an intelligent agent for a game, we must first understand and perceive the established rules. Often a basic game will contain a initial state, a set of possible actions, the repercussions of the actions, and the goal state. We must also be prepared for any unknown information if we are dealing with an unknown environment. After learning the rules, we need to recognize what best action would reach the goal the quickest in specific states.
+
+In early development of intelligent agents, Chess was often used as a game to anaylze the performance of agents. Chess was a popular choice since the environment is known. Players cannot decieve each other since all the information is on the board. Since chess has a large amount of possible actions, early agents needed a effective search algorithm to find the best move. The agent must be able to simulate a numbers of possible moves ahead in order to react to the other player's actions.  
+
 \begin{table}
 \centering
 \begin{tabular}{@{}ll@{}} \toprule
@@ -68,6 +71,28 @@ Describe games in AI --  generate interest here for the reader and give some bac
 \section{Playing Texas Hold 'em as an AI Problem}
 
 Describe how you've transformed this game to a purely AI agent.  Explain your strategies and reasons for adopting them.
+
+Since Texas Hold'em has many unknown factors, it is important to develop an agent that learns from previous rounds and remembers a opponent's actions. We have to consider all known and unknown information that can affects our probability of winning: 
+
+\begin{enumerate}
+	\item Known Information:
+	\begin{itemize}
+		\item Player's Cards
+		\item Current River Cards
+		\item Deck
+		\item Pot Size
+		\item Opponent's Money
+	\end{itemize}
+	\item Unknown Information:
+	\begin{itemize}
+		\item Opponent's Cards
+		\item Future River Cards
+		\item Bluffing Probability
+	\end{itemize}
+\end{enumerate}
+With the current knowledge of our player's cards and the current river cards, we can figure out how valuable our hand is. This is essential to know since it will influence what action we execute. A higher value hand will result in the action of betting, when a lower value hand will result in folding if challenged by another character. 
+
+Other players' actions will also influence our decision, especially a opponent betting.  
 %------------------------------------------------
 
 \section{Code}
